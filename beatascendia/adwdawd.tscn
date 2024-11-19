@@ -7,8 +7,8 @@
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="Sprite2D" type="Sprite2D" parent="Area2D"]
-position = Vector2(-26.9998, -2.3365e-05)
-scale = Vector2(0.470486, 0.591146)
+position = Vector2(289.945, -2.3365e-05)
+scale = Vector2(5.42274, 0.591146)
 texture = ExtResource("1_3ywik")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
