@@ -12,3 +12,10 @@ scale = Vector2(5.42274, 0.591146)
 texture = ExtResource("1_3ywik")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+
+[node name="Label" type="Label" parent="."]
+offset_left = 16.0
+offset_top = 69.0
+offset_right = 100.0
+offset_bottom = 92.0
+text = "wow! sans!"
