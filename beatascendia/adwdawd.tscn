@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://ia6goq5uu306"]
+[gd_scene load_steps=3 format=3 uid="uid://ia6goq5uu306"]
 
 [ext_resource type="Texture2D" uid="uid://o1ps5mmqjv1e" path="res://화면 캡처 2024-10-29 140418.jpg" id="1_e5qou"]
+[ext_resource type="Texture2D" uid="uid://bv3rwgxxmg53x" path="res://blue_body_circle.png" id="2_wc3tg"]
 
 [node name="Node2D" type="Node2D"]
 
@@ -19,3 +20,8 @@ offset_top = 69.0
 offset_right = 100.0
 offset_bottom = 92.0
 text = "wow! sans!"
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
+texture = ExtResource("2_wc3tg")
