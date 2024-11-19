@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://ia6goq5uu306"]
 
-[ext_resource type="Texture2D" uid="uid://o1ps5mmqjv1e" path="res://화면 캡처 2024-10-29 140418.jpg" id="1_e5qou"]
+[ext_resource type="Texture2D" uid="uid://ewhse7uioggx" path="res://화면 캡처 2024-11-19 143102.jpg" id="1_0oi5i"]
 [ext_resource type="Texture2D" uid="uid://bv3rwgxxmg53x" path="res://blue_body_circle.png" id="2_wc3tg"]
 
 [node name="Node2D" type="Node2D"]
@@ -8,9 +8,9 @@
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="Sprite2D" type="Sprite2D" parent="Area2D"]
-position = Vector2(550, 320)
-scale = Vector2(5.42274, 3.51462)
-texture = ExtResource("1_e5qou")
+position = Vector2(512.004, 297.651)
+scale = Vector2(5.23036, 3.38119)
+texture = ExtResource("1_0oi5i")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 
