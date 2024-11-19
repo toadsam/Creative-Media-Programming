@@ -1,12 +1,14 @@
-[gd_scene load_steps=2 format=3 uid="uid://ia6goq5uu306"]
+[gd_scene load_steps=2 format=3 uid="uid://c0bk11guawnvd"]
 
-[ext_resource type="Texture2D" uid="uid://jwfrbcchphtg" path="res://icon.svg" id="1_3ywik"]
+[ext_resource type="Texture2D" uid="uid://ctjabwb06whmr" path="res://3I2A4834.JPG" id="1_wqiev"]
 
 [node name="Node2D" type="Node2D"]
 
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="Sprite2D" type="Sprite2D" parent="Area2D"]
-texture = ExtResource("1_3ywik")
+position = Vector2(-26.9998, -2.3365e-05)
+scale = Vector2(0.470486, 0.591146)
+texture = ExtResource("1_wqiev")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
