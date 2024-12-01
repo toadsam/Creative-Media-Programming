@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://cosfcoh6s8hox"]
+
+[ext_resource type="Script" path="res://JJH/Player.gd" id="1_pm5ow"]
+[ext_resource type="Texture2D" uid="uid://jwfrbcchphtg" path="res://icon.svg" id="2_c13v0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1on5k"]
+size = Vector2(123.5, 118)
+
+[node name="Node2D" type="Node2D"]
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="." groups=["Player"]]
+script = ExtResource("1_pm5ow")
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D" groups=["Player"]]
+texture = ExtResource("2_c13v0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+position = Vector2(0.25, 1)
+shape = SubResource("RectangleShape2D_1on5k")
