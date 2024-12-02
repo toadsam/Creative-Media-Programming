@@ -6,13 +6,11 @@
 
 [node name="Test" type="Node2D"]
 
-[node name="Player" parent="." instance=ExtResource("1_55c0n")]
-visibility_layer = 3
+[node name="Player" parent="." groups=["Player"] instance=ExtResource("1_55c0n")]
 position = Vector2(413, 169)
 
 [node name="Tale(테스트)" parent="." instance=ExtResource("2_wc56p")]
 position = Vector2(-119, 563)
 
-[node name="Enemy" parent="." instance=ExtResource("3_2cc50")]
-light_mask = 2
+[node name="Enemy" parent="." groups=["Enemy"] instance=ExtResource("3_2cc50")]
 position = Vector2(656, 446)
