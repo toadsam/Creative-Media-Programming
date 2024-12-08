@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://ckqf3na5rjdnm" path="res://Parkjiheon/assets/Tileset3.png" id="5_6n03c"]
 [ext_resource type="Texture2D" uid="uid://dxhf2fh1mvb05" path="res://Parkjiheon/industry_asset/Skillicon7_14.png" id="5_vwiv8"]
 [ext_resource type="Texture2D" uid="uid://c7qlymicckq7g" path="res://Parkjiheon/Backgrond_image/Background.png" id="6_c518a"]
-[ext_resource type="Texture2D" uid="uid://bb4ccjxt5nrhb" path="res://Parkjiheon/Backgrond_image/2.png" id="7_dy51b"]
+[ext_resource type="Texture2D" uid="uid://cgtwuqu4shlru" path="res://Parkjiheon/Backgrond_image/2.png" id="7_dy51b"]
 [ext_resource type="Texture2D" uid="uid://bo628drya31cp" path="res://Parkjiheon/industry_asset/IndustrialTile_80.png" id="7_j4p6o"]
 [ext_resource type="Texture2D" uid="uid://dnred6eonct4p" path="res://Parkjiheon/assets/Box.png" id="10_200wh"]
 [ext_resource type="Texture2D" uid="uid://dm8v1447l6qlb" path="res://Parkjiheon/assets/Ladder1.png" id="11_2fhf1"]
@@ -23,7 +23,7 @@
 [ext_resource type="Texture2D" uid="uid://04vrwxral612" path="res://Parkjiheon/industry_asset/Ladder3.png" id="22_htcuv"]
 [ext_resource type="Texture2D" uid="uid://b6owglnqjha02" path="res://Parkjiheon/industry_asset/Ladder2.png" id="23_jm8pd"]
 [ext_resource type="Texture2D" uid="uid://bjochbo40608s" path="res://Parkjiheon/industry_asset/Ladder1.png" id="24_677ie"]
-[ext_resource type="Texture2D" uid="uid://cjxofu1ht3872" path="res://Parkjiheon/Backgrond_image/17.png" id="33_ddlmt"]
+[ext_resource type="Texture2D" uid="uid://07uw5xag2875" path="res://Parkjiheon/Backgrond_image/17.png" id="33_ddlmt"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_agtc4"]
 texture = ExtResource("3_noyqs")
