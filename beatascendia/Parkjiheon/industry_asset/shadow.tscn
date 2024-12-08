@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://c4u70ho0i42w8"]
+[gd_scene load_steps=21 format=3 uid="uid://bubhyp2kv0njm"]
 
 [ext_resource type="Texture2D" uid="uid://ruu6upo8kohl" path="res://KBW/craftpix-net-856554-free-3-cyberpunk-characters-pixel-art/1 Biker/Biker_jump.png" id="1_6qd40"]
 [ext_resource type="Script" path="res://KBW/shadow.gd" id="1_piue3"]

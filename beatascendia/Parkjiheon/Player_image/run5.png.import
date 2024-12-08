@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://btin5da5424eh"
-path="res://.godot/imported/3.png-59e1314995e9984c98bb41f785b60f6a.ctex"
+uid="uid://df4nmgskiex6b"
+path="res://.godot/imported/run5.png-5fd3cd5bec79f6c24b085f0af534903a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://KBW/craftpix-net-924041-power-station-free-tileset-pixel-art/2 Background/Day/3.png"
-dest_files=["res://.godot/imported/3.png-59e1314995e9984c98bb41f785b60f6a.ctex"]
+source_file="res://Parkjiheon/Player_image/run5.png"
+dest_files=["res://.godot/imported/run5.png-5fd3cd5bec79f6c24b085f0af534903a.ctex"]
 
 [params]
 
