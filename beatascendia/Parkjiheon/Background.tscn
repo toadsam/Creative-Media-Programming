@@ -1,23 +1,15 @@
-[gd_scene load_steps=57 format=4 uid="uid://dpxbpwln8ypom"]
+[gd_scene load_steps=46 format=4 uid="uid://dpxbpwln8ypom"]
 
 [ext_resource type="TileSet" uid="uid://sgm1oltpsol1" path="res://Parkjiheon/Ground.tres" id="1_5sov5"]
-[ext_resource type="Script" path="res://Parkjiheon/player.gd" id="2_4xmn5"]
 [ext_resource type="TileSet" uid="uid://dmtbt4dt6yofu" path="res://Parkjiheon/Industry.tres" id="2_nydm5"]
-[ext_resource type="Texture2D" uid="uid://c0xiixw3y7jgq" path="res://Parkjiheon/Player_image/run1.png" id="3_ekso6"]
 [ext_resource type="Texture2D" uid="uid://f7cw5ukfveev" path="res://Parkjiheon/assets/Tileset.png" id="3_noyqs"]
-[ext_resource type="Texture2D" uid="uid://bss0kug006mgh" path="res://Parkjiheon/Player_image/run2.png" id="4_dr1ya"]
 [ext_resource type="Texture2D" uid="uid://5dlvj6on8w2d" path="res://Parkjiheon/industry_asset/Pointer1.png" id="4_prayr"]
 [ext_resource type="Texture2D" uid="uid://djmwvoya66l8c" path="res://Parkjiheon/assets/Tileset2.png" id="4_udpbp"]
-[ext_resource type="Texture2D" uid="uid://socrb8knnjo5" path="res://Parkjiheon/Player_image/run3.png" id="5_2s0ve"]
 [ext_resource type="Texture2D" uid="uid://ckqf3na5rjdnm" path="res://Parkjiheon/assets/Tileset3.png" id="5_6n03c"]
 [ext_resource type="Texture2D" uid="uid://dxhf2fh1mvb05" path="res://Parkjiheon/industry_asset/Skillicon7_14.png" id="5_vwiv8"]
 [ext_resource type="Texture2D" uid="uid://c7qlymicckq7g" path="res://Parkjiheon/Backgrond_image/Background.png" id="6_c518a"]
-[ext_resource type="Texture2D" uid="uid://b0hlvdgvlev8t" path="res://Parkjiheon/Player_image/run4.png" id="6_hebqm"]
 [ext_resource type="Texture2D" uid="uid://bb4ccjxt5nrhb" path="res://Parkjiheon/Backgrond_image/2.png" id="7_dy51b"]
 [ext_resource type="Texture2D" uid="uid://bo628drya31cp" path="res://Parkjiheon/industry_asset/IndustrialTile_80.png" id="7_j4p6o"]
-[ext_resource type="Texture2D" uid="uid://df4nmgskiex6b" path="res://Parkjiheon/Player_image/run5.png" id="7_xgkrl"]
-[ext_resource type="Texture2D" uid="uid://rhepvekkl01f" path="res://Parkjiheon/Player_image/run6.png" id="8_jyedf"]
-[ext_resource type="Texture2D" uid="uid://d20pbjpxuhe5g" path="res://Parkjiheon/Player_image/stand.png" id="9_quhnc"]
 [ext_resource type="Texture2D" uid="uid://dnred6eonct4p" path="res://Parkjiheon/assets/Box.png" id="10_200wh"]
 [ext_resource type="Texture2D" uid="uid://dm8v1447l6qlb" path="res://Parkjiheon/assets/Ladder1.png" id="11_2fhf1"]
 [ext_resource type="Texture2D" uid="uid://vtm2kvvb2seh" path="res://Parkjiheon/assets/Hammer1.png" id="12_6e27v"]
@@ -27,7 +19,6 @@
 [ext_resource type="Texture2D" uid="uid://d4byxaq6u0pc1" path="res://Parkjiheon/assets/Hammer4.png" id="15_hh2gc"]
 [ext_resource type="Script" path="res://Parkjiheon/lever.gd" id="16_qo36s"]
 [ext_resource type="Texture2D" uid="uid://cbsnf520xtpjp" path="res://Parkjiheon/assets/lever.png" id="17_beweh"]
-[ext_resource type="Script" path="res://Parkjiheon/camera_2d.gd" id="22_1q6dr"]
 [ext_resource type="Script" path="res://Parkjiheon/move_object.gd" id="22_1vpie"]
 [ext_resource type="Texture2D" uid="uid://04vrwxral612" path="res://Parkjiheon/industry_asset/Ladder3.png" id="22_htcuv"]
 [ext_resource type="Texture2D" uid="uid://b6owglnqjha02" path="res://Parkjiheon/industry_asset/Ladder2.png" id="23_jm8pd"]
@@ -2527,43 +2518,6 @@ size = Vector2(22.25, 32)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ixv7h"]
 size = Vector2(22, 32)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_wujjd"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("3_ekso6")
-}, {
-"duration": 1.0,
-"texture": ExtResource("4_dr1ya")
-}, {
-"duration": 1.0,
-"texture": ExtResource("5_2s0ve")
-}, {
-"duration": 1.0,
-"texture": ExtResource("6_hebqm")
-}, {
-"duration": 1.0,
-"texture": ExtResource("7_xgkrl")
-}, {
-"duration": 1.0,
-"texture": ExtResource("8_jyedf")
-}],
-"loop": true,
-"name": &"run",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("9_quhnc")
-}],
-"loop": true,
-"name": &"stand",
-"speed": 5.0
-}]
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hge4p"]
-radius = 8.0
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uusml"]
 size = Vector2(59, 14)
 
@@ -2833,33 +2787,6 @@ texture = ExtResource("24_677ie")
 position = Vector2(-4, 0)
 shape = SubResource("RectangleShape2D_ixv7h")
 
-[node name="Player" type="CharacterBody2D" parent="."]
-position = Vector2(749, 551)
-collision_mask = 12
-script = ExtResource("2_4xmn5")
-metadata/_edit_group_ = true
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player"]
-position = Vector2(0.5, -6)
-sprite_frames = SubResource("SpriteFrames_wujjd")
-animation = &"stand"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
-position = Vector2(-1, 2)
-shape = SubResource("CapsuleShape2D_hge4p")
-
-[node name="Camera2D" type="Camera2D" parent="Player"]
-zoom = Vector2(0.8, 0.8)
-limit_left = 0
-limit_top = -200
-limit_right = 1950
-limit_bottom = 1050
-position_smoothing_enabled = true
-drag_top_margin = 0.4
-drag_bottom_margin = 0.4
-editor_draw_limits = true
-script = ExtResource("22_1q6dr")
-
 [node name="Move_object" type="CharacterBody2D" parent="."]
 position = Vector2(1482, 567)
 collision_layer = 8
@@ -2941,36 +2868,4 @@ position = Vector2(973.5, 674)
 scale = Vector2(1.08833, 0.616667)
 texture = ExtResource("33_ddlmt")
 
-[connection signal="body_entered" from="Area2D" to="Player" method="_on_area_2d_body_entered"]
-[connection signal="body_exited" from="Area2D" to="Player" method="_on_area_2d_body_exited"]
-[connection signal="body_entered" from="Area2D2" to="Player" method="_on_area_2d_body_entered"]
-[connection signal="body_exited" from="Area2D2" to="Player" method="_on_area_2d_body_exited"]
-[connection signal="body_entered" from="Area2D3" to="Player" method="_on_area_2d_body_entered"]
-[connection signal="body_exited" from="Area2D3" to="Player" method="_on_area_2d_body_exited"]
-[connection signal="body_entered" from="Area2D4" to="Player" method="_on_area_2d_body_entered"]
-[connection signal="body_exited" from="Area2D4" to="Player" method="_on_area_2d_body_exited"]
-[connection signal="body_entered" from="Area2D5" to="Player" method="_on_area_2d_body_entered"]
-[connection signal="body_exited" from="Area2D5" to="Player" method="_on_area_2d_body_exited"]
-[connection signal="body_entered" from="Area2D6" to="Player" method="_on_area_2d_body_entered"]
-[connection signal="body_exited" from="Area2D6" to="Player" method="_on_area_2d_body_exited"]
 [connection signal="body_entered" from="Lever" to="Lever" method="_on_body_entered"]
-[connection signal="body_entered" from="Ladder" to="Player" method="_on_ladder_body_entered"]
-[connection signal="body_exited" from="Ladder" to="Player" method="_on_ladder_body_exited"]
-[connection signal="body_entered" from="Ladder2" to="Player" method="_on_ladder_body_entered"]
-[connection signal="body_exited" from="Ladder2" to="Player" method="_on_ladder_body_exited"]
-[connection signal="body_entered" from="Ladder_middle" to="Player" method="_on_ladder_middle_body_entered"]
-[connection signal="body_exited" from="Ladder_middle" to="Player" method="_on_ladder_middle_body_exited"]
-[connection signal="body_entered" from="Ladder_connect" to="Player" method="_on_ladder_connect_body_entered"]
-[connection signal="body_exited" from="Ladder_connect" to="Player" method="_on_ladder_connect_body_exited"]
-[connection signal="body_entered" from="Ladder_connect6" to="Player" method="_on_ladder_connect_body_entered"]
-[connection signal="body_exited" from="Ladder_connect6" to="Player" method="_on_ladder_connect_body_exited"]
-[connection signal="body_entered" from="Ladder_connect7" to="Player" method="_on_ladder_connect_body_entered"]
-[connection signal="body_exited" from="Ladder_connect7" to="Player" method="_on_ladder_connect_body_exited"]
-[connection signal="body_entered" from="Ladder_connect2" to="Player" method="_on_ladder_connect_body_entered"]
-[connection signal="body_exited" from="Ladder_connect2" to="Player" method="_on_ladder_connect_body_exited"]
-[connection signal="body_entered" from="Ladder_connect3" to="Player" method="_on_ladder_connect_body_entered"]
-[connection signal="body_exited" from="Ladder_connect3" to="Player" method="_on_ladder_connect_body_exited"]
-[connection signal="body_entered" from="Ladder_connect4" to="Player" method="_on_ladder_connect_body_entered"]
-[connection signal="body_exited" from="Ladder_connect4" to="Player" method="_on_ladder_connect_body_exited"]
-[connection signal="body_entered" from="Ladder_connect5" to="Player" method="_on_ladder_connect_body_entered"]
-[connection signal="body_exited" from="Ladder_connect5" to="Player" method="_on_ladder_connect_body_exited"]
