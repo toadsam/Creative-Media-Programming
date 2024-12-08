@@ -5,7 +5,7 @@ class_name Player
 @export var speed = 200  # 플레이어 이동 속도
 @export var jumpPower = -400  # 플레이어 점프력
 @export var coolTime = 5000.0  # 시간 되감기 능력 쿨타임(ms)
-@onready var shadow = $/root/TimeReverse/Shadow
+@onready var shadow = $/root/Node2D/Shadow
 
 var prePosition = []  # 플레이어의 이전 좌표를 저장하는 배열
 var timeDelay = 3000.0  # Shadow가 따라할 시간 간격(ms)

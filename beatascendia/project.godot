@@ -13,15 +13,11 @@ config_version=5
 config/name="BeatAscendia"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
-
-<<<<<<< HEAD
-[layer_names]
-
-2d_physics/layer_1="Player"
+"<<<<<<<HEAD[layer_names]2d_physics/layer_1"="Player"
 2d_physics/layer_2="Wall"
 2d_physics/layer_3="Ground"
 2d_physics/layer_4="Object"
-=======
+
 [input]
 
 jump={
@@ -50,6 +46,6 @@ Action={
 [layer_names]
 
 2d_physics/layer_1="Player"
-2d_physics/layer_2="Ground"
-2d_physics/layer_3="Shadow"
->>>>>>> main
+2d_physics/layer_2="Wall"
+2d_physics/layer_3="Ground"
+2d_physics/layer_4="Object"
