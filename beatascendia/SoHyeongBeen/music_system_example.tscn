@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://bwdjre2ke5o1f" path="res://SoHyeongBeen/music_system.tscn" id="1_qrjvr"]
 [ext_resource type="Script" path="res://SoHyeongBeen/platform_system.gd" id="2_cuoxv"]
 [ext_resource type="Script" path="res://SoHyeongBeen/ball_spawn_control.gd" id="3_gym3n"]
-[ext_resource type="PackedScene" path="res://SoHyeongBeen/ball.tscn" id="4_vjnqg"]
+[ext_resource type="PackedScene" uid="uid://b1palyrmribxy" path="res://SoHyeongBeen/ball.tscn" id="4_vjnqg"]
 [ext_resource type="Script" path="res://SoHyeongBeen/queue_free.gd" id="5_d2h75"]
 [ext_resource type="Script" path="res://SoHyeongBeen/beat_indicator.gd" id="6_sqamx"]
 

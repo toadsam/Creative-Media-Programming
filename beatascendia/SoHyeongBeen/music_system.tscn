@@ -5,7 +5,6 @@
 [ext_resource type="AudioStream" uid="uid://42a0svsfo5wo" path="res://SoHyeongBeen/sounds/Tape Rewind - Gaming Sound Effect (HD).mp3" id="3_omrhj"]
 
 [node name="MusicSystem" type="Node2D"]
-position = Vector2(-3625.76, -1969.92)
 scale = Vector2(7.04, 7.04)
 script = ExtResource("1_xhcjq")
 music_node_name = "BGM"
@@ -16,8 +15,5 @@ stream = ExtResource("2_oddrm")
 max_distance = 1e+13
 
 [node name="Rewind" type="AudioStreamPlayer2D" parent="."]
-position = Vector2(515.023, 279.818)
-scale = Vector2(0.142045, 0.142045)
 stream = ExtResource("3_omrhj")
 max_distance = 9.22337e+18
-bus = &"Rewind"

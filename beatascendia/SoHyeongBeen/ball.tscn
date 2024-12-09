@@ -1,4 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://n07tdgyic1l5"]
+[gd_scene load_steps=5 format=3 uid="uid://b1palyrmribxy"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_34dsb"]
+bounce = 0.8
 
 [sub_resource type="Gradient" id="Gradient_ksjvm"]
 offsets = PackedFloat32Array(0, 0.993976)
@@ -12,7 +15,8 @@ width = 1
 size = Vector2(50, 50)
 
 [node name="Ball" type="RigidBody2D" groups=["ball"]]
-constant_torque = 5000.0
+mass = 0.1
+physics_material_override = SubResource("PhysicsMaterial_34dsb")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(50, 50)

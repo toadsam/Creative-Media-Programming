@@ -12,7 +12,9 @@ func _process(delta: float) -> void:
 
 func change_x_scale_at_beat() -> void:
 	if music_system.music_system_output == 1:
-		platform.scale.x=1.5
+		var tween = get_tree().create_tween()
+		tween.tween_property(platform, "scale", Vector2(1.5, 1.0), 0.05)
+		# platform.scale.x=1.5
 		
 	elif music_system.music_system_output == 0 and platform.scale.x >= 1:
 		platform.scale.x *= 0.996
