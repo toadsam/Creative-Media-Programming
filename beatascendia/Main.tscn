@@ -17,5 +17,5 @@ collision_mask = 65534
 
 [node name="TestPlayer" parent="." instance=ExtResource("3_7lnh6")]
 top_level = true
-position = Vector2(1489, 334)
+position = Vector2(1010, 948)
 collision_mask = 65534
