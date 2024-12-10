@@ -17,3 +17,5 @@ max_distance = 1e+13
 [node name="Rewind" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_omrhj")
 max_distance = 9.22337e+18
+
+[connection signal="finished" from="BGM" to="." method="_on_music_finished"]
