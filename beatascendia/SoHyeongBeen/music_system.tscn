@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://bwdjre2ke5o1f"]
+
+[ext_resource type="Script" path="res://SoHyeongBeen/music_system.gd" id="1_xhcjq"]
+[ext_resource type="AudioStream" uid="uid://cfsa1h3cbopku" path="res://SoHyeongBeen/sounds/Undertale OST 069 - For the Fans.mp3" id="2_oddrm"]
+[ext_resource type="AudioStream" uid="uid://42a0svsfo5wo" path="res://SoHyeongBeen/sounds/Tape Rewind - Gaming Sound Effect (HD).mp3" id="3_omrhj"]
+
+[node name="MusicSystem" type="Node2D"]
+scale = Vector2(7.04, 7.04)
+script = ExtResource("1_xhcjq")
+music_node_name = "BGM"
+bpm = 94.0
+
+[node name="BGM" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_oddrm")
+max_distance = 1e+13
+
+[node name="Rewind" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_omrhj")
+max_distance = 9.22337e+18
+
+[connection signal="finished" from="BGM" to="." method="_on_music_finished"]

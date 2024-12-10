@@ -1,0 +1,91 @@
+[gd_scene load_steps=13 format=3 uid="uid://c0py2f4cckgtk"]
+
+[ext_resource type="PackedScene" uid="uid://bwdjre2ke5o1f" path="res://SoHyeongBeen/music_system.tscn" id="1_qrjvr"]
+[ext_resource type="Script" path="res://SoHyeongBeen/platform_system.gd" id="2_cuoxv"]
+[ext_resource type="Script" path="res://SoHyeongBeen/ball_spawn_control.gd" id="3_gym3n"]
+[ext_resource type="PackedScene" uid="uid://b1palyrmribxy" path="res://SoHyeongBeen/ball.tscn" id="4_vjnqg"]
+[ext_resource type="Script" path="res://SoHyeongBeen/queue_free.gd" id="5_d2h75"]
+[ext_resource type="Script" path="res://SoHyeongBeen/beat_indicator.gd" id="6_sqamx"]
+
+[sub_resource type="Gradient" id="Gradient_y5268"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_he8f3"]
+gradient = SubResource("Gradient_y5268")
+width = 1
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i3ghk"]
+size = Vector2(100, 10)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kahra"]
+size = Vector2(10000, 20)
+
+[sub_resource type="Gradient" id="Gradient_3jky3"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_fs80c"]
+gradient = SubResource("Gradient_3jky3")
+width = 1
+
+[node name="MusicSystemExample" type="Node2D"]
+
+[node name="MusicSystem" parent="." instance=ExtResource("1_qrjvr")]
+
+[node name="PLATFORM" type="Node2D" parent="."]
+position = Vector2(556, 304)
+
+[node name="PlatformSystem" type="Node2D" parent="PLATFORM"]
+scale = Vector2(7.04, 7.04)
+script = ExtResource("2_cuoxv")
+
+[node name="Platform" type="StaticBody2D" parent="PLATFORM/PlatformSystem"]
+
+[node name="Sprite2D" type="Sprite2D" parent="PLATFORM/PlatformSystem/Platform"]
+scale = Vector2(100, 10)
+texture = SubResource("GradientTexture1D_he8f3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PLATFORM/PlatformSystem/Platform"]
+shape = SubResource("RectangleShape2D_i3ghk")
+
+[node name="BallSpawnControl" type="Node2D" parent="."]
+script = ExtResource("3_gym3n")
+ball_scene = ExtResource("4_vjnqg")
+
+[node name="BallSystem" type="Node2D" parent="."]
+position = Vector2(556, 304)
+
+[node name="Ball" parent="BallSystem" instance=ExtResource("4_vjnqg")]
+position = Vector2(0, -246)
+
+[node name="QueueFree" type="Area2D" parent="BallSystem"]
+position = Vector2(0, 396)
+script = ExtResource("5_d2h75")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BallSystem/QueueFree"]
+shape = SubResource("RectangleShape2D_kahra")
+
+[node name="BeatIndicator" type="Node2D" parent="."]
+script = ExtResource("6_sqamx")
+
+[node name="BeatSprite1" type="Sprite2D" parent="BeatIndicator"]
+position = Vector2(343, 479)
+scale = Vector2(60, 60)
+texture = SubResource("GradientTexture1D_fs80c")
+
+[node name="BeatSprite2" type="Sprite2D" parent="BeatIndicator"]
+position = Vector2(427, 479)
+scale = Vector2(60, 60)
+texture = SubResource("GradientTexture1D_fs80c")
+
+[node name="BeatSprite3" type="Sprite2D" parent="BeatIndicator"]
+position = Vector2(510, 479)
+scale = Vector2(60, 60)
+texture = SubResource("GradientTexture1D_fs80c")
+
+[node name="BeatSprite4" type="Sprite2D" parent="BeatIndicator"]
+position = Vector2(594, 479)
+scale = Vector2(60, 60)
+texture = SubResource("GradientTexture1D_fs80c")
+
+[connection signal="body_entered" from="BallSystem/QueueFree" to="BallSystem/QueueFree" method="_on_body_entered"]
