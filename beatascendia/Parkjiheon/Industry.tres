@@ -1,4 +1,4 @@
-[gd_resource type="TileSet" load_steps=13 format=3 uid="uid://dmtbt4dt6yofu"]
+[gd_resource type="TileSet" load_steps=15 format=3 uid="uid://dmtbt4dt6yofu"]
 
 [ext_resource type="Texture2D" uid="uid://cm2iwiluwg5dt" path="res://Parkjiheon/industry_asset/IndustrialTile_04.png" id="1_215wf"]
 [ext_resource type="Texture2D" uid="uid://dd4ygtklcg2yr" path="res://Parkjiheon/industry_asset/IndustrialTile_06.png" id="2_teil0"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://6rn0uawnw8i4" path="res://Parkjiheon/industry_asset/IndustrialTile_24.png" id="4_5kyui"]
 [ext_resource type="Texture2D" uid="uid://bfhc6tg7b81d8" path="res://Parkjiheon/industry_asset/IndustrialTile_79.png" id="5_bdrs2"]
 [ext_resource type="Texture2D" uid="uid://bo628drya31cp" path="res://Parkjiheon/industry_asset/IndustrialTile_80.png" id="6_41klq"]
+[ext_resource type="Texture2D" uid="uid://dddd8g0efsido" path="res://Parkjiheon/Decorate/bench2.png" id="7_rkxp1"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qvjsr"]
 texture = ExtResource("1_215wf")
@@ -60,6 +61,16 @@ texture = ExtResource("6_41klq")
 1:0/0 = 0
 1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(0.75, 3.625, 0.875, 8, 8, 8, 8, -8, 0.875, -8)
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qir4n"]
+texture = ExtResource("7_rkxp1")
+texture_region_size = Vector2i(16, 21)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 3, 8, 2.75, 7.875, 10.25, -8.125, 10.625)
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 3, 8, 2.75, 7.875, 10.25, -8.125, 10.625)
+2:0/0 = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 3, 8, 2.75, 7.875, 10.25, -8.125, 10.625)
+
 [resource]
 physics_layer_0/collision_layer = 8
 sources/0 = SubResource("TileSetAtlasSource_qvjsr")
@@ -68,3 +79,4 @@ sources/2 = SubResource("TileSetAtlasSource_78xyu")
 sources/3 = SubResource("TileSetAtlasSource_3ulsu")
 sources/4 = SubResource("TileSetAtlasSource_wpdt3")
 sources/5 = SubResource("TileSetAtlasSource_0ne7l")
+sources/6 = SubResource("TileSetAtlasSource_qir4n")

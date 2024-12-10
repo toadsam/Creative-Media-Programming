@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://ddflumcapg46p"]
+[gd_scene load_steps=4 format=3 uid="uid://bvimlpvx3cdip"]
 
 [ext_resource type="PackedScene" uid="uid://dpxbpwln8ypom" path="res://Parkjiheon/Background.tscn" id="1_t68hg"]
 [ext_resource type="PackedScene" uid="uid://c4u70ho0i42w8" path="res://KBW/shadow.tscn" id="2_bbapp"]
@@ -17,5 +17,5 @@ collision_mask = 65534
 
 [node name="TestPlayer" parent="." instance=ExtResource("3_7lnh6")]
 top_level = true
-position = Vector2(1010, 948)
+position = Vector2(128, 18)
 collision_mask = 65534

@@ -16,7 +16,7 @@ var isCoolTime = false  # Shadow가 쿨타임일 때 비활성화하도록 하�
 
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
-func _physics_process(delta):
+func _physics_process(delta):	
 	velocity.y += gravity * delta
 
 	# 기본 이동
