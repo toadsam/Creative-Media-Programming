@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://4kgpqjpoicwg"]
+
+[ext_resource type="Script" path="res://JJH/enemy.gd" id="1_cbewr"]
+[ext_resource type="Texture2D" uid="uid://djhfl8188f88u" path="res://JJH/날아다니는 적.png" id="2_11umg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8silo"]
+size = Vector2(41, 38.5)
+
+[node name="Enemy" type="CharacterBody2D"]
+script = ExtResource("1_cbewr")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(3, -1)
+scale = Vector2(0.061123, 0.057906)
+texture = ExtResource("2_11umg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(2, -1)
+shape = SubResource("RectangleShape2D_8silo")

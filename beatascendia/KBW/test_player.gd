@@ -55,7 +55,7 @@ func _physics_process(delta):
 	else:
 		$PlayerAnim.play("Stand")
 	
-	print("Current frame",Engine.get_physics_frames())
+	#print("Current frame",Engine.get_physics_frames()) 일단 임시로 지웠습니다.
 
 	# 플레이어 좌표 기록
 	record_position()
