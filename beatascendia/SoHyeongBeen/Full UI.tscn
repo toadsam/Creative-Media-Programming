@@ -1,7 +1,6 @@
-[gd_scene load_steps=14 format=3 uid="uid://bjg8pnc0tn7y8"]
+[gd_scene load_steps=12 format=4 uid="uid://du0nx2pk52iww"]
 
 [ext_resource type="Script" path="res://SoHyeongBeen/control.gd" id="1_c0c0o"]
-[ext_resource type="Texture2D" uid="uid://imj4thtp7nwt" path="res://SoHyeongBeen/ui pack/1 Frames/Interface windows.png" id="1_mltig"]
 [ext_resource type="FontFile" uid="uid://c6kce6fci7l3n" path="res://SoHyeongBeen/ui pack/10 Font/CyberpunkCraftpixPixel.otf" id="2_1p5kl"]
 [ext_resource type="Texture2D" uid="uid://cgkh0dnnlt08b" path="res://SoHyeongBeen/ui pack/1 Frames/FrameMap.png" id="2_dmcu1"]
 [ext_resource type="Texture2D" uid="uid://cd1en03cq6nej" path="res://SoHyeongBeen/ui pack/6 Buttons/10/10_01.png" id="2_gyk42"]
@@ -11,7 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://biy5842hc4yim" path="res://SoHyeongBeen/ui pack/6 Buttons/10/10_06.png" id="6_uy53y"]
 [ext_resource type="Texture2D" uid="uid://csap21qbr7x27" path="res://SoHyeongBeen/ui pack/6 Buttons/10/10_07.png" id="7_dxfc2"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hitcj"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5di3k"]
 texture = ExtResource("2_dmcu1")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
@@ -309,32 +308,28 @@ texture_region_size = Vector2i(32, 32)
 15:17/0 = 0
 16:17/0 = 0
 17:17/0 = 0
+6:7/0 = 0
+6:6/0 = 0
+7:6/0 = 0
+8:6/0 = 0
+6:5/0 = 0
+8:4/0 = 0
+6:4/0 = 0
+4:4/0 = 0
+3:4/0 = 0
+2:4/0 = 0
+1:4/0 = 0
+7:2/0 = 0
+7:3/0 = 0
 1:1/0 = 0
 2:1/0 = 0
-6:4/0 = 0
-8:4/0 = 0
-7:3/0 = 0
-7:2/0 = 0
-6:1/0 = 0
-4:1/0 = 0
 3:1/0 = 0
-4:4/0 = 0
-6:6/0 = 0
-8:6/0 = 0
-7:6/0 = 0
-1:4/0 = 0
-2:4/0 = 0
-3:4/0 = 0
-6:5/0 = 0
-6:7/0 = 0
+4:1/0 = 0
+6:1/0 = 0
 
-[sub_resource type="TileSet" id="TileSet_2esnc"]
+[sub_resource type="TileSet" id="TileSet_c4v4i"]
 tile_size = Vector2i(32, 32)
-sources/0 = SubResource("TileSetAtlasSource_hitcj")
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_0p7y7"]
-atlas = ExtResource("1_mltig")
-region = Rect2(223, 734, 199, 271)
+sources/1 = SubResource("TileSetAtlasSource_5di3k")
 
 [node name="Full UI" type="CanvasLayer"]
 
@@ -346,65 +341,74 @@ anchor_right = 0.5
 anchor_bottom = 0.5
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(3.355, 3.355)
 
-[node name="ButtonSystem" type="Control" parent="BoxContainer"]
+[node name="ESC UI" type="Control" parent="BoxContainer"]
 layout_mode = 2
+
+[node name="TileMapLayer" type="TileMapLayer" parent="BoxContainer/ESC UI"]
+texture_filter = 3
+texture_repeat = 1
+position = Vector2(-62, -82)
+tile_map_data = PackedByteArray("AAAAAAEAAQAAAAgAAAAAAAIAAQAAAAYAAAAAAAMAAQAAAAYAAAABAAEAAQABAAgAAAABAAIAAQABAAYAAAABAAMAAQABAAYAAAACAAEAAQABAAgAAAACAAIAAQABAAYAAAACAAMAAQABAAYAAAADAAEAAQACAAgAAAADAAIAAQACAAYAAAADAAMAAQACAAYAAAAAAAQAAQAAAAcAAAABAAQAAQABAAcAAAACAAQAAQABAAcAAAADAAQAAQACAAcAAAAAAAAAAQADAAYAAAADAAAAAQAFAAYAAAABAAAAAQAEAAYAAAACAAAAAQAEAAYAAAA=")
+tile_set = SubResource("TileSet_c4v4i")
+
+[node name="ButtonSystem" type="Control" parent="BoxContainer/ESC UI"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -49.0
+offset_top = -37.0
+offset_right = -49.0
+offset_bottom = -37.0
 script = ExtResource("1_c0c0o")
-text_value = "Resume"
-button_text_x_scale = 96.0
-button_text_y_scale = 32.0
 
-[node name="TileMapLayer" type="TileMapLayer" parent="BoxContainer/ButtonSystem"]
-texture_filter = 5
-tile_set = SubResource("TileSet_2esnc")
+[node name="activeSprite" type="Node2D" parent="BoxContainer/ESC UI/ButtonSystem"]
 
-[node name="frame" type="Sprite2D" parent="BoxContainer/ButtonSystem"]
-position = Vector2(-576, -324)
-texture = SubResource("AtlasTexture_0p7y7")
-
-[node name="activeSprite" type="Node2D" parent="BoxContainer/ButtonSystem"]
-
-[node name="leftSprite" type="Sprite2D" parent="BoxContainer/ButtonSystem/activeSprite"]
+[node name="leftSprite" type="Sprite2D" parent="BoxContainer/ESC UI/ButtonSystem/activeSprite"]
 texture_filter = 5
 texture_repeat = 1
 position = Vector2(16, 16)
 texture = ExtResource("5_3up5n")
 
-[node name="middleSprite" type="Sprite2D" parent="BoxContainer/ButtonSystem/activeSprite"]
+[node name="middleSprite" type="Sprite2D" parent="BoxContainer/ESC UI/ButtonSystem/activeSprite"]
 texture_filter = 3
 texture_repeat = 1
-position = Vector2(48, 16)
+position = Vector2(51, 16)
+scale = Vector2(2.245, 1)
 texture = ExtResource("6_uy53y")
 
-[node name="rightSprite" type="Sprite2D" parent="BoxContainer/ButtonSystem/activeSprite"]
+[node name="rightSprite" type="Sprite2D" parent="BoxContainer/ESC UI/ButtonSystem/activeSprite"]
 texture_filter = 5
 texture_repeat = 1
-position = Vector2(80, 16)
+position = Vector2(87, 16)
 texture = ExtResource("7_dxfc2")
 
-[node name="normalSprite" type="Node2D" parent="BoxContainer/ButtonSystem"]
+[node name="normalSprite" type="Node2D" parent="BoxContainer/ESC UI/ButtonSystem"]
 
-[node name="leftSprite" type="Sprite2D" parent="BoxContainer/ButtonSystem/normalSprite"]
+[node name="leftSprite" type="Sprite2D" parent="BoxContainer/ESC UI/ButtonSystem/normalSprite"]
 texture_filter = 5
 texture_repeat = 1
 position = Vector2(16, 16)
 texture = ExtResource("2_gyk42")
 
-[node name="middleSprite" type="Sprite2D" parent="BoxContainer/ButtonSystem/normalSprite"]
+[node name="middleSprite" type="Sprite2D" parent="BoxContainer/ESC UI/ButtonSystem/normalSprite"]
 texture_filter = 3
 texture_repeat = 1
-position = Vector2(48, 16)
+position = Vector2(51, 16)
+scale = Vector2(2.245, 1)
 texture = ExtResource("3_6p4wc")
 
-[node name="rightSprite" type="Sprite2D" parent="BoxContainer/ButtonSystem/normalSprite"]
+[node name="rightSprite" type="Sprite2D" parent="BoxContainer/ESC UI/ButtonSystem/normalSprite"]
 texture_filter = 5
 texture_repeat = 1
-position = Vector2(80, 16)
+position = Vector2(87, 16)
 texture = ExtResource("4_qqd3g")
 
-[node name="button" type="Button" parent="BoxContainer/ButtonSystem"]
+[node name="button" type="Button" parent="BoxContainer/ESC UI/ButtonSystem"]
+texture_filter = 5
+texture_repeat = 1
 layout_mode = 1
-offset_right = 96.0
+offset_right = 103.0
 offset_bottom = 32.0
 focus_mode = 0
 theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
@@ -414,6 +418,142 @@ theme_override_fonts/font = ExtResource("2_1p5kl")
 text = "Resume"
 flat = true
 
-[connection signal="button_down" from="BoxContainer/ButtonSystem/button" to="BoxContainer/ButtonSystem" method="_on_button_button_down"]
-[connection signal="button_up" from="BoxContainer/ButtonSystem/button" to="BoxContainer/ButtonSystem" method="_on_button_button_up"]
-[connection signal="pressed" from="BoxContainer/ButtonSystem/button" to="BoxContainer/ButtonSystem" method="_on_button_pressed"]
+[node name="ButtonSystem2" type="Control" parent="BoxContainer/ESC UI"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -49.0
+offset_top = -1.0
+offset_right = -49.0
+offset_bottom = -1.0
+script = ExtResource("1_c0c0o")
+
+[node name="activeSprite" type="Node2D" parent="BoxContainer/ESC UI/ButtonSystem2"]
+
+[node name="leftSprite" type="Sprite2D" parent="BoxContainer/ESC UI/ButtonSystem2/activeSprite"]
+texture_filter = 5
+texture_repeat = 1
+position = Vector2(16, 16)
+texture = ExtResource("5_3up5n")
+
+[node name="middleSprite" type="Sprite2D" parent="BoxContainer/ESC UI/ButtonSystem2/activeSprite"]
+texture_filter = 3
+texture_repeat = 1
+position = Vector2(51, 16)
+scale = Vector2(2.245, 1)
+texture = ExtResource("6_uy53y")
+
+[node name="rightSprite" type="Sprite2D" parent="BoxContainer/ESC UI/ButtonSystem2/activeSprite"]
+texture_filter = 5
+texture_repeat = 1
+position = Vector2(87, 16)
+texture = ExtResource("7_dxfc2")
+
+[node name="normalSprite" type="Node2D" parent="BoxContainer/ESC UI/ButtonSystem2"]
+
+[node name="leftSprite" type="Sprite2D" parent="BoxContainer/ESC UI/ButtonSystem2/normalSprite"]
+texture_filter = 5
+texture_repeat = 1
+position = Vector2(16, 16)
+texture = ExtResource("2_gyk42")
+
+[node name="middleSprite" type="Sprite2D" parent="BoxContainer/ESC UI/ButtonSystem2/normalSprite"]
+texture_filter = 3
+texture_repeat = 1
+position = Vector2(51, 16)
+scale = Vector2(2.245, 1)
+texture = ExtResource("3_6p4wc")
+
+[node name="rightSprite" type="Sprite2D" parent="BoxContainer/ESC UI/ButtonSystem2/normalSprite"]
+texture_filter = 5
+texture_repeat = 1
+position = Vector2(87, 16)
+texture = ExtResource("4_qqd3g")
+
+[node name="button" type="Button" parent="BoxContainer/ESC UI/ButtonSystem2"]
+texture_filter = 5
+texture_repeat = 1
+layout_mode = 1
+offset_right = 103.0
+offset_bottom = 32.0
+focus_mode = 0
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(0.76662, 0.76662, 0.76662, 1)
+theme_override_fonts/font = ExtResource("2_1p5kl")
+text = "Resume"
+flat = true
+
+[node name="ButtonSystem3" type="Control" parent="BoxContainer/ESC UI"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -49.0
+offset_top = 35.0
+offset_right = -49.0
+offset_bottom = 35.0
+script = ExtResource("1_c0c0o")
+
+[node name="activeSprite" type="Node2D" parent="BoxContainer/ESC UI/ButtonSystem3"]
+
+[node name="leftSprite" type="Sprite2D" parent="BoxContainer/ESC UI/ButtonSystem3/activeSprite"]
+texture_filter = 5
+texture_repeat = 1
+position = Vector2(16, 16)
+texture = ExtResource("5_3up5n")
+
+[node name="middleSprite" type="Sprite2D" parent="BoxContainer/ESC UI/ButtonSystem3/activeSprite"]
+texture_filter = 3
+texture_repeat = 1
+position = Vector2(51, 16)
+scale = Vector2(2.245, 1)
+texture = ExtResource("6_uy53y")
+
+[node name="rightSprite" type="Sprite2D" parent="BoxContainer/ESC UI/ButtonSystem3/activeSprite"]
+texture_filter = 5
+texture_repeat = 1
+position = Vector2(87, 16)
+texture = ExtResource("7_dxfc2")
+
+[node name="normalSprite" type="Node2D" parent="BoxContainer/ESC UI/ButtonSystem3"]
+
+[node name="leftSprite" type="Sprite2D" parent="BoxContainer/ESC UI/ButtonSystem3/normalSprite"]
+texture_filter = 5
+texture_repeat = 1
+position = Vector2(16, 16)
+texture = ExtResource("2_gyk42")
+
+[node name="middleSprite" type="Sprite2D" parent="BoxContainer/ESC UI/ButtonSystem3/normalSprite"]
+texture_filter = 3
+texture_repeat = 1
+position = Vector2(51, 16)
+scale = Vector2(2.245, 1)
+texture = ExtResource("3_6p4wc")
+
+[node name="rightSprite" type="Sprite2D" parent="BoxContainer/ESC UI/ButtonSystem3/normalSprite"]
+texture_filter = 5
+texture_repeat = 1
+position = Vector2(87, 16)
+texture = ExtResource("4_qqd3g")
+
+[node name="button" type="Button" parent="BoxContainer/ESC UI/ButtonSystem3"]
+texture_filter = 5
+texture_repeat = 1
+layout_mode = 1
+offset_right = 103.0
+offset_bottom = 32.0
+focus_mode = 0
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(0.76662, 0.76662, 0.76662, 1)
+theme_override_fonts/font = ExtResource("2_1p5kl")
+text = "Resume"
+flat = true
+
+[connection signal="button_down" from="BoxContainer/ESC UI/ButtonSystem/button" to="BoxContainer/ESC UI/ButtonSystem" method="_on_button_button_down"]
+[connection signal="button_up" from="BoxContainer/ESC UI/ButtonSystem/button" to="BoxContainer/ESC UI/ButtonSystem" method="_on_button_button_up"]
+[connection signal="pressed" from="BoxContainer/ESC UI/ButtonSystem/button" to="BoxContainer/ESC UI/ButtonSystem" method="_on_button_pressed"]
+[connection signal="button_down" from="BoxContainer/ESC UI/ButtonSystem2/button" to="BoxContainer/ESC UI/ButtonSystem2" method="_on_button_button_down"]
+[connection signal="button_up" from="BoxContainer/ESC UI/ButtonSystem2/button" to="BoxContainer/ESC UI/ButtonSystem2" method="_on_button_button_up"]
+[connection signal="pressed" from="BoxContainer/ESC UI/ButtonSystem2/button" to="BoxContainer/ESC UI/ButtonSystem2" method="_on_button_pressed"]
+[connection signal="button_down" from="BoxContainer/ESC UI/ButtonSystem3/button" to="BoxContainer/ESC UI/ButtonSystem3" method="_on_button_button_down"]
+[connection signal="button_up" from="BoxContainer/ESC UI/ButtonSystem3/button" to="BoxContainer/ESC UI/ButtonSystem3" method="_on_button_button_up"]
+[connection signal="pressed" from="BoxContainer/ESC UI/ButtonSystem3/button" to="BoxContainer/ESC UI/ButtonSystem3" method="_on_button_pressed"]
