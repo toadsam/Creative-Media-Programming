@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://42a0svsfo5wo"
+path="res://.godot/imported/Tape Rewind - Gaming Sound Effect (HD).mp3-cc502fc30d7b9401e063a8a4fb8a4f9a.mp3str"
+
+[deps]
+
+source_file="res://SoHyeongBeen/sounds/Tape Rewind - Gaming Sound Effect (HD).mp3"
+dest_files=["res://.godot/imported/Tape Rewind - Gaming Sound Effect (HD).mp3-cc502fc30d7b9401e063a8a4fb8a4f9a.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
