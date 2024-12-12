@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://b1palyrmribxy" path="res://SoHyeongBeen/ball.tscn" id="4_vjnqg"]
 [ext_resource type="Script" path="res://SoHyeongBeen/queue_free.gd" id="5_d2h75"]
 [ext_resource type="Script" path="res://SoHyeongBeen/beat_indicator.gd" id="6_sqamx"]
-[ext_resource type="PackedScene" uid="uid://bjg8pnc0tn7y8" path="res://SoHyeongBeen/Full UI.tscn" id="7_40f2s"]
+[ext_resource type="PackedScene" uid="uid://du0nx2pk52iww" path="res://SoHyeongBeen/Full UI.tscn" id="7_40f2s"]
 
 [sub_resource type="Gradient" id="Gradient_y5268"]
 colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1)
@@ -89,6 +89,6 @@ position = Vector2(594, 479)
 scale = Vector2(60, 60)
 texture = SubResource("GradientTexture1D_fs80c")
 
-[node name="CanvasLayer" parent="." instance=ExtResource("7_40f2s")]
+[node name="Full UI" parent="." instance=ExtResource("7_40f2s")]
 
 [connection signal="body_entered" from="BallSystem/QueueFree" to="BallSystem/QueueFree" method="_on_body_entered"]
