@@ -18,4 +18,5 @@ max_distance = 1e+13
 stream = ExtResource("3_omrhj")
 max_distance = 9.22337e+18
 
+[connection signal="is_beat_signal" from="." to="." method="_on_is_beat_signal"]
 [connection signal="finished" from="BGM" to="." method="_on_music_finished"]

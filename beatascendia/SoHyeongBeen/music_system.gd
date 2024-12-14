@@ -1,6 +1,7 @@
 extends Node2D
 # .tscn (씬)으로 불러온 경우, 반드시 "로컬로 만들기" 해야 음악과 음악 설정을 따로 접근할 수 있음.
 
+signal is_beat_signal(beat:int)
 @export var music_node_name: String  # 타입: AudioStreamPlayer2D, 인스펙터에서 노드의 이름 입력.
 
 var music_node: AudioStreamPlayer2D
@@ -87,12 +88,10 @@ func check_beat() -> void:  #박자 계산 함수
 	music_system_output = 0
 	
 	if current_music_time >= next_beat_time:
-		print("current_music_time: ", String("%.3f" % current_music_time), ", next_beat_time: ", String("%.3f" % next_beat_time))
 		music_system_output = 1
 		next_beat_time += beat_interval
 		beat += 1
-		print("비트 실행 후 next_beat_time: ", String("%.3f" % next_beat_time))
-		print("현재 박자: ", beat)
+		emit_signal("is_beat_signal", beat)
 		
 func forward_music() -> void:   # 3초 앞으로 음악 재생을 이동하는 함수
 
@@ -130,3 +129,6 @@ func rewind_music() -> void:
 func _on_music_finished() -> void:
 	print("음악이 끝났습니다!")
 	stop_music()
+
+func _on_is_beat_signal(beat: int) -> void:
+	print("지금 beat는 ", beat)
