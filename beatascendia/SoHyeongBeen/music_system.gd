@@ -21,18 +21,12 @@ func _ready() -> void:
 	
 	beat_interval = 60.0 / bpm
 	print("beat_interval: ", beat_interval)
+	if not is_music_started:
+		start_music()
 
 func _process(_delta: float) -> void:
 	if not music_node:
 		return
-
-	if Input.is_action_just_pressed("ui_accept"):
-		if not is_music_started:
-			start_music()
-		elif music_node.playing:
-			stop_music()
-	elif Input.is_action_just_pressed("ui_text_backspace") and music_node.playing:
-		forward_music()
 
 	if is_music_started:
 		check_beat()
