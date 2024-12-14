@@ -103,7 +103,7 @@ func _physics_process(delta):
 		rewindPositions = prePosition.duplicate()
 		rewindPositions.reverse()  # 배열 뒤집기
 		
-		$"../MusicSystem".forward_music()
+		$"MusicSystem".forward_music()
 
 	# 쿨타임 동안 Shadow 비활성화
 	if isCoolTime:
