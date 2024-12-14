@@ -23,6 +23,11 @@ var wallNormal = Vector2.ZERO  # 벽의 방향(법선 벡터)
 var vertical = 0
 var horizontal = 0
 
+var isRewinding = false  # 되감기 상태
+var rewindDuration = 3000.0  # 되감기 시간 (ms)
+var rewindStartTime = 0.0  # 되감기 시작 시간
+var rewindPositions = []  # 되감기 중 사용할 좌표 배열
+
 static var is_on_ladder = false
 const Climpspeed = 100
 
@@ -30,65 +35,83 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 func _physics_process(delta):
 	velocity.y += gravity * delta
-	# 기본 이동
-	if Input.is_action_just_pressed("jump"):
-		if is_on_floor():
-			velocity.y = jumpPower
-		elif isTouchingWall:  # 벽 점프 처리
-			velocity = Vector2(wallNormal.x * wallJumpPower.x, wallJumpPower.y)
-			isTouchingWall = false  # 벽 점프 이후 상태 초기화
-
-	var direction = Input.get_axis("left", "right")
-	velocity.x = direction * speed
 	
-	if is_on_ladder:
-		velocity.y = 0
-		if Input.is_action_pressed("up"):
-			velocity.y = -Climpspeed
-		if Input.is_action_pressed("down"):
-			velocity.y = Climpspeed
-
-	# 시간 되감기 능력 발동
-	if Input.is_action_just_pressed("Action") and not isCoolTime:
-		self.global_position = shadow.global_position
+	if not isRewinding:
+		# 기본 이동
+		var direction = Input.get_axis("left", "right")
+		velocity.x = direction * speed
+		
+		if Input.is_action_just_pressed("jump"):
+			if is_on_floor():
+				velocity.y = jumpPower
+			elif isTouchingWall:  # 벽 점프 처리
+				velocity = Vector2(wallNormal.x * wallJumpPower.x, wallJumpPower.y)
+				isTouchingWall = false  # 벽 점프 이후 상태 초기화
+		
+		if is_on_ladder:
+			velocity.y = 0
+			if Input.is_action_pressed("up"):
+				velocity.y = -Climpspeed
+			if Input.is_action_pressed("down"):
+				velocity.y = Climpspeed
+		
+		# 벽 점프 상태 확인
+		check_wall_contact()
+		move_and_slide()
+		# 플레이어 좌표 기록
+		record_position()
+		# Shadow 위치 갱신
+		if prePosition.size() > 0:
+			shadow.global_position = prePosition[0]
+					
+		if is_on_ladder:
+			$PlayerAnim.play("Climb")
+		elif not is_on_floor():
+			$PlayerAnim.play("Jump")
+		elif direction == 1:
+			$PlayerAnim.flip_h = false
+			$PlayerAnim.play("Run")
+		elif direction == -1:
+			$PlayerAnim.flip_h = true
+			$PlayerAnim.play("Run")
+		else:
+			$PlayerAnim.play("Stand")
+	
+	else:
+		var elapsedRewindTime = Time.get_ticks_msec() - rewindStartTime
+		var progress = elapsedRewindTime / rewindDuration  # 되감기 진행률 (0.0 ~ 1.0)
+		
+		$PlayerAnim.play("Rewind")
+		
+		if progress >= 1.0 or rewindPositions.is_empty():
+			# 되감기가 완료되면 상태 초기화
+			isRewinding = false
+			rewindPositions.clear()
+		else:
+			# 되감기 진행: 위치를 순차적으로 업데이트
+			var index = int(progress * rewindPositions.size())
+			self.global_position = rewindPositions[index]
+		
+		
+	if Input.is_action_just_pressed("Action") and not isCoolTime and not isRewinding:
+		# 되감기 시작
+		isRewinding = true
 		isCoolTime = true
-		abilityStartTime = Time.get_ticks_msec()
+		rewindStartTime = Time.get_ticks_msec()
+		abilityStartTime = Time.get_ticks_msec()  # 쿨타임 시작
+		# 되감기 동안 사용할 위치 데이터를 복사한 후 뒤집기
+		rewindPositions = prePosition.duplicate()
+		rewindPositions.reverse()  # 배열 뒤집기
 
 	# 쿨타임 동안 Shadow 비활성화
 	if isCoolTime:
 		var elapsedCoolTime = Time.get_ticks_msec() - abilityStartTime
-		if elapsedCoolTime >= coolTime:
+		if elapsedCoolTime >= coolTime + rewindDuration:
 			isCoolTime = false
 		else:
 			shadow.hide()
 	else:
 		shadow.show()
-	
-	check_wall_contact()
-
-	move_and_slide()
-	
-	if is_on_ladder:
-		$PlayerAnim.play("Climb")	
-	elif not is_on_floor():
-		$PlayerAnim.play("Jump")
-	elif direction == 1:
-		$PlayerAnim.flip_h = false
-		$PlayerAnim.play("Run")
-	elif direction == -1:
-		$PlayerAnim.flip_h = true
-		$PlayerAnim.play("Run")
-	else:
-		$PlayerAnim.play("Stand")
-
-	# 플레이어 좌표 기록
-	record_position()
-
-	# Shadow 위치 갱신
-	if prePosition.size() > 0:
-		shadow.global_position = prePosition[0]
-	# 벽 점프 상태 확인
-
 
 func check_wall_contact() -> void:
 	# 벽 충돌 감지 초기화
