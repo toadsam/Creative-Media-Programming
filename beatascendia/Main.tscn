@@ -12,11 +12,11 @@ position = Vector2(-4, 7)
 
 [node name="Shadow" parent="." instance=ExtResource("2_bbapp")]
 top_level = true
-position = Vector2(1465, 992)
+position = Vector2(200, 143)
 collision_layer = 1
 collision_mask = 65534
 
 [node name="TestPlayer" parent="." instance=ExtResource("3_7lnh6")]
 top_level = true
-position = Vector2(1458, 993)
+position = Vector2(193, 144)
 collision_mask = 65534

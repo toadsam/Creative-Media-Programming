@@ -5,8 +5,10 @@ class_name Player
 @export var speed = 200  # 플레이어 이동 속도
 @export var jumpPower = -500  # 플레이어 점프력
 @export var wallJumpPower = Vector2(-150, -300)  # 벽 점프 방향과 힘 (x, y)
+
 @export var coolTime = 5000.0  # 시간 되감기 능력 쿨타임(ms)
 @export var health = 100
+@export var money = 0
 
 @onready var shadow = get_parent().get_node("Shadow")
 
