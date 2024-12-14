@@ -1,21 +1,28 @@
-[gd_scene load_steps=4 format=3 uid="uid://ddflumcapg46p"]
+[gd_scene load_steps=4 format=3 uid="uid://ywv0f717dn0n"]
 
 [ext_resource type="PackedScene" uid="uid://dpxbpwln8ypom" path="res://Parkjiheon/Background.tscn" id="1_t68hg"]
-[ext_resource type="PackedScene" uid="uid://c4u70ho0i42w8" path="res://KBW/shadow.tscn" id="2_bbapp"]
-[ext_resource type="PackedScene" uid="uid://v5rfwmb3h8kg" path="res://KBW/testPlayer.tscn" id="3_7lnh6"]
+[ext_resource type="PackedScene" uid="uid://dbxdkfq8455jp" path="res://KBW/shadow.tscn" id="2_bbapp"]
+[ext_resource type="PackedScene" uid="uid://dnew26e581w7b" path="res://KBW/testPlayer.tscn" id="3_7lnh6"]
 
-[node name="Node2D" type="Node2D"]
+[node name="Main" type="Node2D"]
 
 [node name="Background" parent="." instance=ExtResource("1_t68hg")]
 show_behind_parent = true
+position = Vector2(-4, 7)
 
 [node name="Shadow" parent="." instance=ExtResource("2_bbapp")]
 top_level = true
-position = Vector2(573, 41)
+position = Vector2(200, 143)
 collision_layer = 1
 collision_mask = 65534
 
 [node name="TestPlayer" parent="." instance=ExtResource("3_7lnh6")]
 top_level = true
-position = Vector2(1489, 334)
+position = Vector2(193, 144)
 collision_mask = 65534
+speed = 200
+jumpPower = -500
+wallJumpPower = Vector2(-150, -300)
+coolTime = 5000.0
+health = 100
+money = 0
