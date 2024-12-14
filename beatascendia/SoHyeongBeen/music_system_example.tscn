@@ -1,12 +1,31 @@
-[gd_scene load_steps=14 format=3 uid="uid://c0py2f4cckgtk"]
+[gd_scene load_steps=19 format=3 uid="uid://b7u5j7f4aj73m"]
 
 [ext_resource type="PackedScene" uid="uid://bwdjre2ke5o1f" path="res://SoHyeongBeen/music_system.tscn" id="1_qrjvr"]
-[ext_resource type="Script" path="res://SoHyeongBeen/platform_system.gd" id="2_cuoxv"]
-[ext_resource type="Script" path="res://SoHyeongBeen/ball_spawn_control.gd" id="3_gym3n"]
-[ext_resource type="PackedScene" uid="uid://b1palyrmribxy" path="res://SoHyeongBeen/ball.tscn" id="4_vjnqg"]
-[ext_resource type="Script" path="res://SoHyeongBeen/queue_free.gd" id="5_d2h75"]
-[ext_resource type="Script" path="res://SoHyeongBeen/beat_indicator.gd" id="6_sqamx"]
+[ext_resource type="PackedScene" uid="uid://dj4c4tm7ti050" path="res://SoHyeongBeen/ball.tscn" id="4_vjnqg"]
 [ext_resource type="PackedScene" uid="uid://du0nx2pk52iww" path="res://SoHyeongBeen/Full UI.tscn" id="7_40f2s"]
+
+[sub_resource type="GDScript" id="GDScript_62nuv"]
+script/source = "extends Node2D
+
+@onready var music_system = $\"../../MusicSystem\"
+@onready var platform = $Platform
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	change_x_scale_at_beat()
+
+func change_x_scale_at_beat() -> void:
+	if music_system.music_system_output == 1:
+		var tween = get_tree().create_tween()
+		tween.tween_property(platform, \"scale\", Vector2(1.5, 1.0), 0.05)
+		# platform.scale.x=1.5
+		
+	elif music_system.music_system_output == 0 and platform.scale.x >= 1:
+		platform.scale.x *= 0.996
+"
 
 [sub_resource type="Gradient" id="Gradient_y5268"]
 colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1)
@@ -18,8 +37,119 @@ width = 1
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i3ghk"]
 size = Vector2(100, 10)
 
+[sub_resource type="GDScript" id="GDScript_tmmri"]
+script/source = "extends Node2D
+
+@export var ball_scene: PackedScene  # 인스펙터에서 BallSystem 씬을 할당
+
+func _ready() -> void:
+	randomize()
+
+func _input(event: InputEvent) -> void:
+	# 왼쪽 마우스 버튼 클릭 시 BallSystem 인스턴스 생성
+	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
+		spawn_ball(get_global_mouse_position())
+
+func spawn_ball(position: Vector2) -> void:
+	# BallSystem 씬 인스턴스화
+	var ball_instance = ball_scene.instantiate()
+	ball_instance.position = position
+	ball_instance.rotation_degrees = randf_range(0, 360)
+	add_child(ball_instance)
+"
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_34dsb"]
+bounce = 0.8
+
+[sub_resource type="Gradient" id="Gradient_ksjvm"]
+offsets = PackedFloat32Array(0, 0.993976)
+colors = PackedColorArray(0, 1, 0, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_4cvoo"]
+gradient = SubResource("Gradient_ksjvm")
+width = 1
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p02xv"]
+size = Vector2(50, 50)
+
+[sub_resource type="PackedScene" id="PackedScene_b02bc"]
+_bundled = {
+"conn_count": 0,
+"conns": PackedInt32Array(),
+"editable_instances": [],
+"names": PackedStringArray("Ball", "RigidBody2D", "ball", "mass", "physics_material_override", "Sprite2D", "Sprite2D", "scale", "texture", "CollisionShape2D", "CollisionShape2D", "shape"),
+"node_count": 3,
+"node_paths": [NodePath("."), NodePath(".")],
+"nodes": PackedInt32Array(-1, -1, 1, 0, -1, 2, 3, 0, 4, 1, 1, 2, 1073741824, 0, 6, 5, -1, 2, 7, 2, 8, 3, 0, 1073741825, 0, 10, 9, -1, 1, 11, 4, 0),
+"variants": [0.1, SubResource("PhysicsMaterial_34dsb"), Vector2(50, 50), SubResource("GradientTexture1D_4cvoo"), SubResource("RectangleShape2D_p02xv")],
+"version": 3
+}
+
+[sub_resource type="GDScript" id="GDScript_avp5b"]
+script/source = "extends Area2D
+
+func _on_body_entered(body: Node2D) -> void:
+	if body.is_in_group(\"ball\"):
+		body.queue_free()
+"
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kahra"]
 size = Vector2(10000, 20)
+
+[sub_resource type="GDScript" id="GDScript_16w8u"]
+script/source = "extends Node2D
+
+@onready var music_system = $\"../MusicSystem\"
+@onready var sprite1 = $BeatSprite1
+@onready var sprite2 = $BeatSprite2
+@onready var sprite3 = $BeatSprite3
+@onready var sprite4 = $BeatSprite4
+
+var beat : int = 0
+var compare_beat_because_print : int = 0
+
+func _process(delta: float) -> void:
+	
+	
+		
+	compare_beat_because_print = beat
+	beat = music_system.beat
+	
+	if beat == compare_beat_because_print:
+		return
+		
+	if beat % 4 == 1:
+		#박자에 따른 창 위치 조절 테스트
+		get_window().position = Vector2(400, 50)
+		print(\"beat: 1\")
+		sprite1.modulate = Color(1, 0, 0)
+		var tween = get_tree().create_tween()
+		tween.tween_property($BeatSprite1, \"modulate\", Color(1, 1, 1), 0.5)
+
+	elif beat % 4 == 2:
+		#박자에 따른 창 위치 조절 테스트
+		get_window().position = Vector2(200, 200)
+		print(\"beat: 2\")
+		sprite2.modulate = Color(0, 0, 1)
+		var tween = get_tree().create_tween()
+		tween.tween_property($BeatSprite2, \"modulate\", Color (1, 1, 1), 0.5)
+		
+	elif beat % 4 == 3:
+		#박자에 따른 창 위치 조절 테스트
+		get_window().position = Vector2(400, 600)
+		print(\"beat: 3\")
+		sprite3.modulate = Color(0, 0, 1)
+		var tween = get_tree().create_tween()
+		tween.tween_property($BeatSprite3, \"modulate\", Color (1, 1, 1), 0.5)
+		
+	elif beat % 4 == 0:
+		#박자에 따른 창 위치 조절 테스트
+		get_window().position = Vector2(600, 200)
+		print(\"beat: 4\")
+		sprite4.modulate = Color(0, 0, 1)
+		var tween = get_tree().create_tween()
+		tween.tween_property($BeatSprite4, \"modulate\", Color (1, 1, 1), 0.5)
+"
 
 [sub_resource type="Gradient" id="Gradient_3jky3"]
 offsets = PackedFloat32Array(0)
@@ -38,7 +168,7 @@ position = Vector2(556, 304)
 
 [node name="PlatformSystem" type="Node2D" parent="PLATFORM"]
 scale = Vector2(7.04, 7.04)
-script = ExtResource("2_cuoxv")
+script = SubResource("GDScript_62nuv")
 
 [node name="Platform" type="StaticBody2D" parent="PLATFORM/PlatformSystem"]
 
@@ -50,8 +180,8 @@ texture = SubResource("GradientTexture1D_he8f3")
 shape = SubResource("RectangleShape2D_i3ghk")
 
 [node name="BallSpawnControl" type="Node2D" parent="."]
-script = ExtResource("3_gym3n")
-ball_scene = ExtResource("4_vjnqg")
+script = SubResource("GDScript_tmmri")
+ball_scene = SubResource("PackedScene_b02bc")
 
 [node name="BallSystem" type="Node2D" parent="."]
 position = Vector2(556, 304)
@@ -61,14 +191,14 @@ position = Vector2(0, -246)
 
 [node name="QueueFree" type="Area2D" parent="BallSystem"]
 position = Vector2(0, 396)
-script = ExtResource("5_d2h75")
+script = SubResource("GDScript_avp5b")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BallSystem/QueueFree"]
 shape = SubResource("RectangleShape2D_kahra")
 
 [node name="BeatIndicator" type="Node2D" parent="."]
 position = Vector2(-276, 9)
-script = ExtResource("6_sqamx")
+script = SubResource("GDScript_16w8u")
 
 [node name="BeatSprite1" type="Sprite2D" parent="BeatIndicator"]
 position = Vector2(343, 479)

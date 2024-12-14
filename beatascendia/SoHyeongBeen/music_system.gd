@@ -2,6 +2,7 @@ extends Node2D
 
 signal is_beat_signal(beat: int)
 
+@export var bgm_stream: AudioStream
 @export var music_node_name: String
 @export var bpm: float
 
@@ -18,6 +19,9 @@ func _ready() -> void:
 	if not music_node:
 		push_error("MusicSystem의 하위 노드 " + music_node_name + " 없음")
 		return
+	
+	if bgm_stream:
+		music_node.stream = bgm_stream
 	
 	beat_interval = 60.0 / bpm
 	print("beat_interval: ", beat_interval)
