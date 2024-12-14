@@ -7,8 +7,6 @@
 
 [node name="Main" type="Node2D"]
 
-[node name="MusicSystem" parent="." instance=ExtResource("1_cqyfs")]
-
 [node name="Background" parent="." instance=ExtResource("1_t68hg")]
 show_behind_parent = true
 position = Vector2(-4, 7)
@@ -23,3 +21,5 @@ collision_mask = 65534
 top_level = true
 position = Vector2(193, 144)
 collision_mask = 65534
+
+[node name="MusicSystem" parent="TestPlayer" instance=ExtResource("1_cqyfs")]
