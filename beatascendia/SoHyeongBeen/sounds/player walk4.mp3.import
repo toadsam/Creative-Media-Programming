@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dadvv6n45rsew"
+path="res://.godot/imported/player walk4.mp3-22f21b727f33c8ead00b7c02f46edc91.mp3str"
+
+[deps]
+
+source_file="res://SoHyeongBeen/sounds/player walk4.mp3"
+dest_files=["res://.godot/imported/player walk4.mp3-22f21b727f33c8ead00b7c02f46edc91.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
