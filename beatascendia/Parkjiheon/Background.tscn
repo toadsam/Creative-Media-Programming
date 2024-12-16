@@ -1,7 +1,6 @@
-[gd_scene load_steps=73 format=4 uid="uid://dpxbpwln8ypom"]
+[gd_scene load_steps=72 format=4 uid="uid://dpxbpwln8ypom"]
 
 [ext_resource type="TileSet" uid="uid://sgm1oltpsol1" path="res://Parkjiheon/Ground.tres" id="1_5sov5"]
-[ext_resource type="PackedScene" uid="uid://v5rfwmb3h8kg" path="res://KBW/testPlayer.tscn" id="1_c853n"]
 [ext_resource type="TileSet" uid="uid://dmtbt4dt6yofu" path="res://Parkjiheon/Industry.tres" id="2_nydm5"]
 [ext_resource type="Texture2D" uid="uid://f7cw5ukfveev" path="res://Parkjiheon/assets/Tileset.png" id="3_noyqs"]
 [ext_resource type="Texture2D" uid="uid://5dlvj6on8w2d" path="res://Parkjiheon/industry_asset/Pointer1.png" id="4_prayr"]
@@ -2765,11 +2764,6 @@ texture = ExtResource("10_200wh")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Box"]
 position = Vector2(-0.5, 0)
 shape = SubResource("RectangleShape2D_y1x11")
-
-[node name="TestPlayer" parent="." instance=ExtResource("1_c853n")]
-top_level = true
-position = Vector2(647, 967)
-collision_mask = 14
 
 [node name="Box2" type="StaticBody2D" parent="."]
 position = Vector2(436, 51)
