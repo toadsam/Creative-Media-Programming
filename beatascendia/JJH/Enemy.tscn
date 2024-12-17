@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://4kgpqjpoicwg"]
+[gd_scene load_steps=4 format=3 uid="uid://bg8hg4y06blgo"]
 
 [ext_resource type="Script" path="res://JJH/enemy.gd" id="1_cbewr"]
 [ext_resource type="Texture2D" uid="uid://djhfl8188f88u" path="res://JJH/날아다니는 적.png" id="2_11umg"]

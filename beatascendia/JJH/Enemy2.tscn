@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://cew3bibm04m56"]
+[gd_scene load_steps=4 format=3 uid="uid://bifn2pj5o4iyh"]
 
 [ext_resource type="Script" path="res://JJH/enemy_2.gd" id="1_fgung"]
 [ext_resource type="Texture2D" uid="uid://dyc7b1p6m1ope" path="res://JJH/불꽃총알.png" id="2_occ75"]

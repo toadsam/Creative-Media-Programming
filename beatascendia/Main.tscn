@@ -1,10 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://ddflumcapg46p"]
+[gd_scene load_steps=4 format=3 uid="uid://c3l2rggxw73oh"]
 
 [ext_resource type="PackedScene" uid="uid://dpxbpwln8ypom" path="res://Parkjiheon/Background.tscn" id="1_t68hg"]
 [ext_resource type="PackedScene" uid="uid://c4u70ho0i42w8" path="res://KBW/shadow.tscn" id="2_bbapp"]
 [ext_resource type="PackedScene" uid="uid://v5rfwmb3h8kg" path="res://KBW/testPlayer.tscn" id="3_7lnh6"]
 
-[node name="Node2D" type="Node2D"]
+[node name="Node2D3" type="Node2D"]
 
 [node name="Background" parent="." instance=ExtResource("1_t68hg")]
 show_behind_parent = true
