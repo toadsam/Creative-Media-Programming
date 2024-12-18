@@ -37,7 +37,6 @@ func _process(delta):
 
 func _on_body_entered(body):
 	if not is_counting_down and body.name == "TestPlayer":
-		print("플레이어와 충돌! 카운트다운 시작!")
 		is_counting_down = true
 
 func explode():
@@ -54,13 +53,11 @@ func explode():
 	tween.tween_callback(_on_explosion_complete)
 
 func _on_explosion_complete():
-	print("플레이어에게 닿았습니다!")
 	sprite.visible = false  # 폭발 후 숨김
 	timer.start()  # 재생성 타이머 시작
 
 func _on_Timer_timeout():
 	# 폭탄 재생성
-	print("재생성 완료")  # 디버깅 출력
 	global_position = original_position  # 원래 위치로 돌아감
 	sprite.visible = true  # 스프라이트 다시 보이게 설정
 	sprite.texture = idle_texture  # 평소 상태 이미지로 되돌림

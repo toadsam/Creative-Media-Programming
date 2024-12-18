@@ -12,9 +12,6 @@ func _process(delta: float) -> void:
 	else:
 		normal_button_sprite.visible = true
 
-func _on_button_pressed() -> void:
-	print("sans")
-
 func _on_button_button_up() -> void:
 	is_button_pressing = false
 	

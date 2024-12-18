@@ -12,5 +12,5 @@ position = Vector2(413, 169)
 [node name="Tale(테스트)" parent="." instance=ExtResource("2_wc56p")]
 position = Vector2(-119, 563)
 
-[node name="Enemy" parent="." groups=["Enemy"] instance=ExtResource("3_2cc50")]
+[node name="Enemy" parent="." instance=ExtResource("3_2cc50")]
 position = Vector2(656, 446)

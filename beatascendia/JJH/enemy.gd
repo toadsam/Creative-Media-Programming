@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-@export var speed: float = 150.0  # 적의 이동 속도
+@export var speed: float = 50.0  # 적의 이동 속도
 @onready var player = get_parent().get_node("TestPlayer")  # 플레이어 노드
 var is_paused: bool = false  # 적이 멈춰 있는지 확인하는 플래그
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://c2ef34j7ahkgn"]
+[gd_scene load_steps=14 format=3 uid="uid://c2ef34j7ahkgn"]
 
 [ext_resource type="Script" path="res://SoHyeongBeen/start_scene.gd" id="1_i7o7j"]
 [ext_resource type="Texture2D" uid="uid://def87dsgadcx0" path="res://SoHyeongBeen/캡처_2024_12_18_12_18_05_852.png" id="1_s08mc"]
@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://cd1en03cq6nej" path="res://SoHyeongBeen/ui pack/6 Buttons/10/10_01.png" id="8_wilbo"]
 [ext_resource type="Texture2D" uid="uid://duwsaco3xewiy" path="res://SoHyeongBeen/ui pack/6 Buttons/10/10_02.png" id="9_epewn"]
 [ext_resource type="Texture2D" uid="uid://dwwgmw50ktvap" path="res://SoHyeongBeen/ui pack/6 Buttons/10/10_03.png" id="10_0l1n5"]
+[ext_resource type="Texture2D" uid="uid://imj4thtp7nwt" path="res://SoHyeongBeen/ui pack/1 Frames/Interface windows.png" id="13_3e814"]
 
 [node name="StartScene" type="CanvasLayer"]
 script = ExtResource("1_i7o7j")
@@ -308,6 +309,65 @@ pivot_offset = Vector2(79.44, 0)
 theme_override_fonts/font = ExtResource("3_j0531")
 theme_override_font_sizes/font_size = 37
 text = "volume"
+
+[node name="InterfaceWindows" type="Sprite2D" parent="."]
+position = Vector2(182, 469)
+scale = Vector2(1.38436, 1.38436)
+texture = ExtResource("13_3e814")
+region_enabled = true
+region_rect = Rect2(1339, 734, 241, 227)
+
+[node name="Label3" type="Label" parent="InterfaceWindows"]
+texture_filter = 5
+texture_repeat = 1
+offset_left = -137.97
+offset_top = -109.076
+offset_right = 147.03
+offset_bottom = 109.924
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("3_j0531")
+theme_override_font_sizes/font_size = 12
+text = "Players gain the ability
+ to go back in time. 
+But what remains in 
+his memory is just 
+a fountain. 
+Player use his abilities to
+ run toward the fountain,
+avoiding obstacles and
+ enemies in a world that
+ coexists with music."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="InterfaceWindows2" type="Sprite2D" parent="."]
+position = Vector2(954, 469)
+scale = Vector2(1.384, 1.384)
+texture = ExtResource("13_3e814")
+region_enabled = true
+region_rect = Rect2(1339, 734, 241, 227)
+
+[node name="Label3" type="Label" parent="InterfaceWindows2"]
+texture_filter = 5
+texture_repeat = 1
+offset_left = -138.728
+offset_top = -108.382
+offset_right = 146.272
+offset_bottom = 110.618
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("3_j0531")
+theme_override_font_sizes/font_size = 16
+text = "credits
+
+Team time rewinders
+
+kimbyungwook
+parkjiheon
+sohyeongbeen
+jeongjeahoon
+"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [connection signal="button_down" from="BoxContainer/Buttons/ButtonSystem/button" to="BoxContainer/Buttons/ButtonSystem" method="_on_button_button_down"]
 [connection signal="button_up" from="BoxContainer/Buttons/ButtonSystem/button" to="BoxContainer/Buttons/ButtonSystem" method="_on_button_button_up"]

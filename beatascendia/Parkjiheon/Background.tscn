@@ -30,6 +30,7 @@
 [ext_resource type="Texture2D" uid="uid://iisfwrs41t1k" path="res://Parkjiheon/assets/Skillicon7_14.png" id="15_st23n"]
 [ext_resource type="Script" path="res://Parkjiheon/lever.gd" id="16_qo36s"]
 [ext_resource type="Texture2D" uid="uid://cbsnf520xtpjp" path="res://Parkjiheon/assets/lever.png" id="17_beweh"]
+[ext_resource type="Script" path="res://Parkjiheon/ladder.gd" id="18_u2w48"]
 [ext_resource type="Texture2D" uid="uid://bpqp8fabc2jxy" path="res://Parkjiheon/Decorate/2.png" id="19_mh6x8"]
 [ext_resource type="Script" path="res://Parkjiheon/move_object.gd" id="22_1vpie"]
 [ext_resource type="Texture2D" uid="uid://04vrwxral612" path="res://Parkjiheon/industry_asset/Ladder3.png" id="22_htcuv"]
@@ -2716,13 +2717,10 @@ animations = [{
 size = Vector2(18, 78.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_33gkk"]
-size = Vector2(22, 7)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_fd2tt"]
-size = Vector2(22.25, 32)
+size = Vector2(22, 75)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ixv7h"]
-size = Vector2(22, 32)
+size = Vector2(22, 205)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uusml"]
 size = Vector2(59, 14)
@@ -2797,6 +2795,7 @@ shape = SubResource("RectangleShape2D_y1x11")
 [node name="Area2D" type="Area2D" parent="."]
 position = Vector2(655, 881)
 collision_layer = 8
+script = ExtResource("18_u2w48")
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="Area2D"]
@@ -2809,6 +2808,7 @@ shape = SubResource("RectangleShape2D_6xxy3")
 [node name="Area2D2" type="Area2D" parent="."]
 position = Vector2(718, 881)
 collision_layer = 8
+script = ExtResource("18_u2w48")
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="Area2D2"]
@@ -2821,6 +2821,7 @@ shape = SubResource("RectangleShape2D_6xxy3")
 [node name="Area2D3" type="Area2D" parent="."]
 position = Vector2(720, 737)
 collision_layer = 8
+script = ExtResource("18_u2w48")
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="Area2D3"]
@@ -2833,6 +2834,7 @@ shape = SubResource("RectangleShape2D_6xxy3")
 [node name="Area2D4" type="Area2D" parent="."]
 position = Vector2(656, 736)
 collision_layer = 8
+script = ExtResource("18_u2w48")
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="Area2D4"]
@@ -2845,6 +2847,7 @@ shape = SubResource("RectangleShape2D_6xxy3")
 [node name="Area2D5" type="Area2D" parent="."]
 position = Vector2(657, 592)
 collision_layer = 8
+script = ExtResource("18_u2w48")
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="Area2D5"]
@@ -2857,6 +2860,7 @@ shape = SubResource("RectangleShape2D_6xxy3")
 [node name="Area2D6" type="Area2D" parent="."]
 position = Vector2(720, 592)
 collision_layer = 8
+script = ExtResource("18_u2w48")
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="Area2D6"]
@@ -2900,19 +2904,16 @@ metadata/_edit_group_ = true
 [node name="Sprite2D" type="Sprite2D" parent="Ladder"]
 texture = ExtResource("22_htcuv")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Ladder"]
-position = Vector2(-4, 10)
-shape = SubResource("RectangleShape2D_33gkk")
-
 [node name="Ladder2" type="Area2D" parent="."]
 position = Vector2(1569, 353)
+script = ExtResource("18_u2w48")
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="Ladder2"]
 texture = ExtResource("22_htcuv")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ladder2"]
-position = Vector2(-4, 10)
+position = Vector2(-4, 42.5)
 shape = SubResource("RectangleShape2D_33gkk")
 
 [node name="Ladder_middle" type="Area2D" parent="."]
@@ -2922,19 +2923,16 @@ metadata/_edit_group_ = true
 [node name="Sprite2D" type="Sprite2D" parent="Ladder_middle"]
 texture = ExtResource("23_jm8pd")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Ladder_middle"]
-position = Vector2(-4.125, 0)
-shape = SubResource("RectangleShape2D_fd2tt")
-
 [node name="Ladder_connect" type="Area2D" parent="."]
 position = Vector2(977, 402)
+script = ExtResource("18_u2w48")
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="Ladder_connect"]
 texture = ExtResource("24_677ie")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ladder_connect"]
-position = Vector2(-4, -1)
+position = Vector2(-4, 75.5)
 shape = SubResource("RectangleShape2D_ixv7h")
 
 [node name="Ladder_connect6" type="Area2D" parent="."]
@@ -2944,20 +2942,12 @@ metadata/_edit_group_ = true
 [node name="Sprite2D" type="Sprite2D" parent="Ladder_connect6"]
 texture = ExtResource("24_677ie")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Ladder_connect6"]
-position = Vector2(-4, -1)
-shape = SubResource("RectangleShape2D_ixv7h")
-
 [node name="Ladder_connect7" type="Area2D" parent="."]
 position = Vector2(1569, 417)
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="Ladder_connect7"]
 texture = ExtResource("24_677ie")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Ladder_connect7"]
-position = Vector2(-4, -1)
-shape = SubResource("RectangleShape2D_ixv7h")
 
 [node name="Ladder_connect2" type="Area2D" parent="."]
 position = Vector2(977, 466)
@@ -2966,20 +2956,12 @@ metadata/_edit_group_ = true
 [node name="Sprite2D" type="Sprite2D" parent="Ladder_connect2"]
 texture = ExtResource("24_677ie")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Ladder_connect2"]
-position = Vector2(-4, 0)
-shape = SubResource("RectangleShape2D_ixv7h")
-
 [node name="Ladder_connect3" type="Area2D" parent="."]
 position = Vector2(977, 498)
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="Ladder_connect3"]
 texture = ExtResource("24_677ie")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Ladder_connect3"]
-position = Vector2(-4, 0)
-shape = SubResource("RectangleShape2D_ixv7h")
 
 [node name="Ladder_connect4" type="Area2D" parent="."]
 position = Vector2(977, 531)
@@ -2988,20 +2970,12 @@ metadata/_edit_group_ = true
 [node name="Sprite2D" type="Sprite2D" parent="Ladder_connect4"]
 texture = ExtResource("24_677ie")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Ladder_connect4"]
-position = Vector2(-4, 0)
-shape = SubResource("RectangleShape2D_ixv7h")
-
 [node name="Ladder_connect5" type="Area2D" parent="."]
 position = Vector2(977, 563)
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="Ladder_connect5"]
 texture = ExtResource("24_677ie")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Ladder_connect5"]
-position = Vector2(-4, 0)
-shape = SubResource("RectangleShape2D_ixv7h")
 
 [node name="Move_object" type="CharacterBody2D" parent="."]
 position = Vector2(1482, 567)
@@ -3158,6 +3132,22 @@ shape = SubResource("RectangleShape2D_6blih")
 [node name="Sprite2D" type="Sprite2D" parent="BigTree"]
 texture = ExtResource("42_xu4ke")
 
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
+[connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]
+[connection signal="body_entered" from="Area2D2" to="Area2D2" method="_on_body_entered"]
+[connection signal="body_exited" from="Area2D2" to="Area2D2" method="_on_body_exited"]
+[connection signal="body_entered" from="Area2D3" to="Area2D3" method="_on_body_entered"]
+[connection signal="body_exited" from="Area2D3" to="Area2D3" method="_on_body_exited"]
+[connection signal="body_entered" from="Area2D4" to="Area2D4" method="_on_body_entered"]
+[connection signal="body_exited" from="Area2D4" to="Area2D4" method="_on_body_exited"]
+[connection signal="body_entered" from="Area2D5" to="Area2D5" method="_on_body_entered"]
+[connection signal="body_exited" from="Area2D5" to="Area2D5" method="_on_body_exited"]
+[connection signal="body_entered" from="Area2D6" to="Area2D6" method="_on_body_entered"]
+[connection signal="body_exited" from="Area2D6" to="Area2D6" method="_on_body_exited"]
 [connection signal="body_entered" from="Lever" to="Lever" method="_on_body_entered"]
+[connection signal="body_entered" from="Ladder2" to="Ladder2" method="_on_body_entered"]
+[connection signal="body_exited" from="Ladder2" to="Ladder2" method="_on_body_exited"]
+[connection signal="body_entered" from="Ladder_connect" to="Ladder_connect" method="_on_body_entered"]
+[connection signal="body_exited" from="Ladder_connect" to="Ladder_connect" method="_on_body_exited"]
 [connection signal="body_exited" from="DeadZone" to="DeadZone" method="_on_body_exited"]
 [connection signal="body_entered" from="Fountain" to="Fountain" method="_on_body_entered"]

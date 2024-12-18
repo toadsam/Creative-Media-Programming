@@ -1,0 +1,56 @@
+[gd_scene load_steps=11 format=3 uid="uid://b1tlqvdis3ylx"]
+
+[ext_resource type="PackedScene" uid="uid://c4nubssdvg4do" path="res://Parkjiheon/Background2.tscn" id="1_5a415"]
+[ext_resource type="PackedScene" uid="uid://dbxdkfq8455jp" path="res://KBW/shadow.tscn" id="2_46088"]
+[ext_resource type="PackedScene" uid="uid://v5rfwmb3h8kg" path="res://KBW/testPlayer.tscn" id="3_qex1q"]
+[ext_resource type="PackedScene" uid="uid://bwdjre2ke5o1f" path="res://SoHyeongBeen/music_system.tscn" id="4_vhvcj"]
+[ext_resource type="AudioStream" uid="uid://bu66x18ye5yxh" path="res://SoHyeongBeen/sounds/Starry Quest Stage2 20minutes 100bpm.mp3" id="5_j5vju"]
+[ext_resource type="Script" path="res://SoHyeongBeen/walk_sound.gd" id="5_te6tc"]
+[ext_resource type="AudioStream" uid="uid://cd217123sievs" path="res://SoHyeongBeen/sounds/player jump.mp3" id="6_sbofj"]
+[ext_resource type="Script" path="res://SoHyeongBeen/jump_sound.gd" id="7_g25me"]
+[ext_resource type="PackedScene" uid="uid://bg8hg4y06blgo" path="res://JJH/Enemy.tscn" id="9_h0p06"]
+[ext_resource type="PackedScene" uid="uid://drry0xvvj7tpv" path="res://JJH/StealthEnemy.tscn" id="10_t6p1q"]
+
+[node name="Stage2" type="Node2D"]
+
+[node name="Background2" parent="." instance=ExtResource("1_5a415")]
+position = Vector2(7, 913)
+
+[node name="Shadow" parent="." instance=ExtResource("2_46088")]
+top_level = true
+position = Vector2(170, 990)
+collision_layer = 1
+collision_mask = 65534
+
+[node name="TestPlayer" parent="." instance=ExtResource("3_qex1q")]
+top_level = true
+position = Vector2(170, 990)
+collision_mask = 65534
+
+[node name="MusicSystem" parent="TestPlayer" instance=ExtResource("4_vhvcj")]
+bgm_stream = ExtResource("5_j5vju")
+
+[node name="WalkSound" type="AudioStreamPlayer2D" parent="TestPlayer"]
+script = ExtResource("5_te6tc")
+
+[node name="JumpSound" type="AudioStreamPlayer2D" parent="TestPlayer"]
+stream = ExtResource("6_sbofj")
+script = ExtResource("7_g25me")
+
+[node name="Enemy" parent="." instance=ExtResource("9_h0p06")]
+position = Vector2(1253, 1443)
+
+[node name="Enemy2" parent="." instance=ExtResource("9_h0p06")]
+position = Vector2(4048, 138)
+
+[node name="StealthEnemy" parent="." instance=ExtResource("10_t6p1q")]
+position = Vector2(1675, 1751)
+
+[node name="StealthEnemy2" parent="." instance=ExtResource("10_t6p1q")]
+position = Vector2(2580, 1479)
+
+[node name="StealthEnemy3" parent="." instance=ExtResource("10_t6p1q")]
+position = Vector2(1847, 1018)
+
+[node name="StealthEnemy4" parent="." instance=ExtResource("10_t6p1q")]
+position = Vector2(3415, 705)

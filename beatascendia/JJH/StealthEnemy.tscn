@@ -6,16 +6,15 @@
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_pfvdt"]
 
-[node name="StealthEnemy" type="CharacterBody2D"]
+[node name="StealthEnemy" type="CharacterBody2D" groups=["StealthEnemy"]]
+collision_layer = 16
 script = ExtResource("1_ywqbo")
 normal_texture = ExtResource("2_skl1p")
 stealth_texture = ExtResource("3_nkham")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(490, 51)
 scale = Vector2(0.0731383, 0.0731383)
 texture = ExtResource("2_skl1p")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(494, 51)
 shape = SubResource("CircleShape2D_pfvdt")

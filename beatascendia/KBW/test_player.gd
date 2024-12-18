@@ -7,13 +7,16 @@ class_name Player
 @export var wallJumpPower = Vector2(-150, -300)  # 벽 점프 방향과 힘 (x, y)
 
 @export var coolTime = 5000.0  # 시간 되감기 능력 쿨타임(ms)
-@export var health = 100
-@export var money = 0
+
+var health = 100
 
 @onready var shadow = get_parent().get_node("Shadow")
+@onready var camera = get_node("Camera2D")
+@onready var collision_shape = get_node("CollisionShape2D") 
 
-
+static var stage = 0
 var prePosition = []  # 플레이어의 이전 좌표를 저장하는 배열
+var preHealth = []  # 플레이어의 이전 체력을 저장하는 배열
 var timeDelay = 3000.0  # Shadow가 따라할 시간 간격(ms)
 var recordInterval = 10.0  # 좌표를 기록하는 간격(ms)
 var lastRecordTime = 0.0  # 마지막으로 기록한 시간
@@ -28,11 +31,14 @@ var isRewinding = false  # 되감기 상태
 var rewindDuration = 3000.0  # 되감기 시간 (ms)
 var rewindStartTime = 0.0  # 되감기 시작 시간
 var rewindPositions = []  # 되감기 중 사용할 좌표 배열
-
+var elapsedCoolTime = 8000.0
 static var is_on_ladder = false
 const Climpspeed = 100
 
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
+
+func _ready():
+	$HUD.update_time(8000)
 
 func _physics_process(delta):	
 	velocity.y += gravity * delta
@@ -59,6 +65,21 @@ func _physics_process(delta):
 		# 벽 점프 상태 확인
 		check_wall_contact()
 		move_and_slide()
+		
+		#camera 리미트 조절
+		if stage == 1:
+			camera.limit_left = -10
+			camera.limit_right = 1950
+			camera.limit_top = -135
+			camera.limit_bottom = 1100
+		elif stage == 2:
+			camera.limit_left = 0
+			camera.limit_right = 5400
+			camera.limit_top = 0
+			camera.limit_bottom = 1825
+		
+		$HUD.update_health(health)
+		
 		# 플레이어 좌표 기록
 		record_position()
 		# Shadow 위치 갱신
@@ -79,19 +100,26 @@ func _physics_process(delta):
 			$PlayerAnim.play("Stand")
 	
 	else:
+		# 되감기 진행: 위치와 health를 순차적으로 업데이트
 		var elapsedRewindTime = Time.get_ticks_msec() - rewindStartTime
 		var progress = elapsedRewindTime / rewindDuration  # 되감기 진행률 (0.0 ~ 1.0)
-		
 		$PlayerAnim.play("Rewind")
 		
-		if progress >= 1.0 or rewindPositions.is_empty():
+		collision_shape.disabled = true
+		
+		if progress >= 1.0 or rewindPositions.is_empty() or preHealth.is_empty():
 			# 되감기가 완료되면 상태 초기화
 			isRewinding = false
 			rewindPositions.clear()
+			preHealth.clear()
+			collision_shape.disabled = false
 		else:
-			# 되감기 진행: 위치를 순차적으로 업데이트
+			# 되감기 진행
 			var index = int(progress * rewindPositions.size())
 			self.global_position = rewindPositions[index]
+			health = preHealth[index]
+			$HUD.update_health(health)  # UI 갱신
+
 		
 		
 	if Input.is_action_just_pressed("Action") and not isCoolTime and not isRewinding:
@@ -100,15 +128,16 @@ func _physics_process(delta):
 		isCoolTime = true
 		rewindStartTime = Time.get_ticks_msec()
 		abilityStartTime = Time.get_ticks_msec()  # 쿨타임 시작
-		# 되감기 동안 사용할 위치 데이터를 복사한 후 뒤집기
+		# 되감기 데이터를 복사 및 뒤집기
 		rewindPositions = prePosition.duplicate()
-		rewindPositions.reverse()  # 배열 뒤집기
-		
+		rewindPositions.reverse()  # 위치 배열 뒤집기
+		preHealth.reverse()  # health 배열 뒤집기
 		$"MusicSystem".forward_music()
 
 	# 쿨타임 동안 Shadow 비활성화
 	if isCoolTime:
-		var elapsedCoolTime = Time.get_ticks_msec() - abilityStartTime
+		elapsedCoolTime = Time.get_ticks_msec() - abilityStartTime
+		$HUD.update_time(elapsedCoolTime)	
 		if elapsedCoolTime >= coolTime + rewindDuration:
 			isCoolTime = false
 		else:
@@ -130,10 +159,31 @@ func check_wall_contact() -> void:
 func record_position():
 	var currentTime = Time.get_ticks_msec()
 
-	# 일정한 간격으로 위치와 시간을 기록
+	# 일정한 간격으로 위치와 health를 기록
 	if currentTime - lastRecordTime >= recordInterval:
 		prePosition.append(self.global_position)
+		preHealth.append(health)  # 현재 health 기록
 		lastRecordTime = currentTime  # 마지막 기록 시간 갱신
 	
+	# 오래된 데이터를 삭제 (위치와 health 동기화 유지)
 	if prePosition.size() > timeDelay / 1000 * 60:
 		prePosition.pop_front()
+	if preHealth.size() > timeDelay / 1000 * 60:
+		preHealth.pop_front()
+
+
+func _on_area_2d_body_entered(body):
+	if body.is_in_group("Enemy"):
+		health -= 10
+		# 적과의 상대 위치를 계산
+		var push_direction = (body.global_position - self.global_position).normalized()
+		body.global_position += push_direction * 50  # 밀려나는 거리 (20 픽셀 정도)
+	elif body.is_in_group("StealthEnemy"):
+		health -= 5
+	
+	if(health <= 0):
+					health = 0
+					$HUD.update_health(health)
+					$HUD.game_over()
+					await get_tree().create_timer(1.5).timeout
+					get_tree().reload_current_scene()

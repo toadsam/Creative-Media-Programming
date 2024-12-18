@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://v5rfwmb3h8kg"]
+[gd_scene load_steps=42 format=3 uid="uid://v5rfwmb3h8kg"]
 
 [ext_resource type="Script" path="res://KBW/test_player.gd" id="1_xi8pr"]
 [ext_resource type="Texture2D" uid="uid://2p5v76oktwcg" path="res://KBW/craftpix-net-856554-free-3-cyberpunk-characters-pixel-art/1 Biker/Biker_climb.png" id="2_8xyc3"]
@@ -6,6 +6,12 @@
 [ext_resource type="Texture2D" uid="uid://butaqb7d4lvow" path="res://KBW/craftpix-net-856554-free-3-cyberpunk-characters-pixel-art/1 Biker/Biker_idle.png" id="3_pdjda"]
 [ext_resource type="Texture2D" uid="uid://dp4l4vevc0n0i" path="res://KBW/craftpix-net-856554-free-3-cyberpunk-characters-pixel-art/1 Biker/Biker_run.png" id="4_o430v"]
 [ext_resource type="Texture2D" uid="uid://c3ywpq8401n8p" path="res://KBW/craftpix-net-856554-free-3-cyberpunk-characters-pixel-art/1 Biker/Biker_doublejump.png" id="4_pr5le"]
+[ext_resource type="Script" path="res://KBW/HUD.gd" id="7_spta1"]
+[ext_resource type="Texture2D" uid="uid://malen17nuo3b" path="res://SoHyeongBeen/ui pack/2 Bars/HealthBar8.png" id="8_yggmh"]
+[ext_resource type="Texture2D" uid="uid://hdb7lvm21y54" path="res://SoHyeongBeen/ui pack/2 Bars/HealthBar4.png" id="9_k3mhm"]
+[ext_resource type="FontFile" uid="uid://bwdr1cg4odoye" path="res://Parkjiheon/Font/CyberpunkCraftpixPixel.otf" id="10_dvhhq"]
+[ext_resource type="Texture2D" uid="uid://bay2ka7csdich" path="res://SoHyeongBeen/ui pack/2 Bars/EnergyBar8.png" id="11_hoas8"]
+[ext_resource type="Texture2D" uid="uid://dsb5mrbuxwqhj" path="res://SoHyeongBeen/ui pack/2 Bars/EnergyBar4.png" id="12_va232"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_an31o"]
 atlas = ExtResource("2_8xyc3")
@@ -221,7 +227,11 @@ animations = [{
 radius = 6.5
 height = 28.0
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_immiw"]
+radius = 7.0
+
 [node name="TestPlayer" type="CharacterBody2D"]
+collision_mask = 30
 script = ExtResource("1_xi8pr")
 
 [node name="PlayerAnim" type="AnimatedSprite2D" parent="."]
@@ -237,3 +247,42 @@ shape = SubResource("CapsuleShape2D_y0r0f")
 [node name="Camera2D" type="Camera2D" parent="."]
 offset = Vector2(0, -50)
 zoom = Vector2(1.5, 1.5)
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_mask = 48
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(2, 9)
+shape = SubResource("CapsuleShape2D_immiw")
+
+[node name="HUD" type="CanvasLayer" parent="."]
+script = ExtResource("7_spta1")
+
+[node name="HP" type="TextureProgressBar" parent="HUD"]
+offset_right = 32.0
+offset_bottom = 32.0
+scale = Vector2(7.04341, 3.44959)
+texture_under = ExtResource("8_yggmh")
+texture_progress = ExtResource("9_k3mhm")
+
+[node name="GameEnd" type="Label" parent="HUD"]
+visible = false
+offset_left = 433.0
+offset_top = 281.0
+offset_right = 824.0
+offset_bottom = 366.0
+theme_override_fonts/font = ExtResource("10_dvhhq")
+theme_override_font_sizes/font_size = 80
+text = "You Die!!"
+
+[node name="Time" type="TextureProgressBar" parent="HUD"]
+offset_left = 9.0
+offset_top = 59.0
+offset_right = 49.0
+offset_bottom = 99.0
+scale = Vector2(5.64657, 4.86087)
+max_value = 8000.0
+texture_under = ExtResource("11_hoas8")
+texture_progress = ExtResource("12_va232")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
