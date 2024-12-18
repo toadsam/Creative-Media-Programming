@@ -22,7 +22,7 @@ func _on_button_pressed_3() -> void:
 func _on_h_slider_value_changed(value: float) -> void:
 	var mapped_value = remap(value, 0, 100, -30, 0)
 	
-	# -80dB 미만은 음소거로 처리
+# Mute less than -80 dB
 	if mapped_value <= -30:
 		AudioServer.set_bus_mute(master_bus, true)
 	else:

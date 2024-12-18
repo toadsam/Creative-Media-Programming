@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://df0f5pfr5rsi8"
-path="res://.godot/imported/Skateboard1.png-a41a32b5b3d2fdd85a438179d2705d68.ctex"
+path="res://.godot/imported/Skateboard1.png-1031ca7c103339699a8e32089f056874.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Parkjiheon/assets/Skateboard1.png"
-dest_files=["res://.godot/imported/Skateboard1.png-a41a32b5b3d2fdd85a438179d2705d68.ctex"]
+source_file="res://ParkJiHeon/assets/Skateboard1.png"
+dest_files=["res://.godot/imported/Skateboard1.png-1031ca7c103339699a8e32089f056874.ctex"]
 
 [params]
 

@@ -1,15 +1,15 @@
 [gd_scene load_steps=11 format=3 uid="uid://b1tlqvdis3ylx"]
 
-[ext_resource type="PackedScene" uid="uid://c4nubssdvg4do" path="res://Parkjiheon/Background2.tscn" id="1_5a415"]
-[ext_resource type="PackedScene" uid="uid://dbxdkfq8455jp" path="res://KBW/shadow.tscn" id="2_46088"]
-[ext_resource type="PackedScene" uid="uid://v5rfwmb3h8kg" path="res://KBW/testPlayer.tscn" id="3_qex1q"]
+[ext_resource type="PackedScene" uid="uid://c4nubssdvg4do" path="res://ParkJiHeon/Background2.tscn" id="1_5a415"]
+[ext_resource type="PackedScene" uid="uid://dbxdkfq8455jp" path="res://KimByungWook/shadow.tscn" id="2_46088"]
+[ext_resource type="PackedScene" uid="uid://v5rfwmb3h8kg" path="res://KimByungWook/testPlayer.tscn" id="3_qex1q"]
 [ext_resource type="PackedScene" uid="uid://bwdjre2ke5o1f" path="res://SoHyeongBeen/music_system.tscn" id="4_vhvcj"]
 [ext_resource type="AudioStream" uid="uid://bu66x18ye5yxh" path="res://SoHyeongBeen/sounds/Starry Quest Stage2 20minutes 100bpm.mp3" id="5_j5vju"]
 [ext_resource type="Script" path="res://SoHyeongBeen/walk_sound.gd" id="5_te6tc"]
 [ext_resource type="AudioStream" uid="uid://cd217123sievs" path="res://SoHyeongBeen/sounds/player jump.mp3" id="6_sbofj"]
 [ext_resource type="Script" path="res://SoHyeongBeen/jump_sound.gd" id="7_g25me"]
-[ext_resource type="PackedScene" uid="uid://bg8hg4y06blgo" path="res://JJH/Enemy.tscn" id="9_h0p06"]
-[ext_resource type="PackedScene" uid="uid://drry0xvvj7tpv" path="res://JJH/StealthEnemy.tscn" id="10_t6p1q"]
+[ext_resource type="PackedScene" uid="uid://bg8hg4y06blgo" path="res://JeongJeaHoon/Enemy.tscn" id="9_h0p06"]
+[ext_resource type="PackedScene" uid="uid://drry0xvvj7tpv" path="res://JeongJeaHoon/StealthEnemy.tscn" id="10_t6p1q"]
 
 [node name="Stage2" type="Node2D"]
 

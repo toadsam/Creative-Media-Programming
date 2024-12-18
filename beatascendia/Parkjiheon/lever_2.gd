@@ -3,7 +3,7 @@ extends Area2D
 
 var is_activated = false
 var original_global_transform = Transform2D()
-
+#lever for open doors
 func _ready():
 	original_global_transform = $Obstacle.global_transform
 

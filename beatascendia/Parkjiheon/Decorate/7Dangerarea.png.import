@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://824kik8rdoj8"
-path="res://.godot/imported/7Dangerarea.png-37efc954000a6256617b3a51f8713d4c.ctex"
+path="res://.godot/imported/7Dangerarea.png-d8e9d7e9d5c6f63001d13c18874bed2f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Parkjiheon/Decorate/7Dangerarea.png"
-dest_files=["res://.godot/imported/7Dangerarea.png-37efc954000a6256617b3a51f8713d4c.ctex"]
+source_file="res://ParkJiHeon/Decorate/7Dangerarea.png"
+dest_files=["res://.godot/imported/7Dangerarea.png-d8e9d7e9d5c6f63001d13c18874bed2f.ctex"]
 
 [params]
 

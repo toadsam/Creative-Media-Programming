@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://nybniw1gkpmw"
-path="res://.godot/imported/KakaoTalk_20241218_175448516.png-1208862df1551bd2b9a17a312e01835e.ctex"
+path="res://.godot/imported/KakaoTalk_20241218_175448516.png-3f0378eb64a9b9e7613dae2e68b038a9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Parkjiheon/KakaoTalk_20241218_175448516.png"
-dest_files=["res://.godot/imported/KakaoTalk_20241218_175448516.png-1208862df1551bd2b9a17a312e01835e.ctex"]
+source_file="res://ParkJiHeon/KakaoTalk_20241218_175448516.png"
+dest_files=["res://.godot/imported/KakaoTalk_20241218_175448516.png-3f0378eb64a9b9e7613dae2e68b038a9.ctex"]
 
 [params]
 

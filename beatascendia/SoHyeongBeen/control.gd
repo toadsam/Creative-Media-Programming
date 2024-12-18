@@ -1,6 +1,6 @@
 extends Control
 
-
+#UI control
 @onready var normal_button_sprite = $normalSprite as Node2D
 var is_button_pressing = false
 func _ready() -> void:

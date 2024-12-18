@@ -3,6 +3,7 @@ extends Node2D
 @onready var show = $CanvasLayer/Start
 @onready var show2 = $CanvasLayer/Description
 
+#Stage 1
 func _ready() -> void:
 	show.visible = true
 	show2.visible = true

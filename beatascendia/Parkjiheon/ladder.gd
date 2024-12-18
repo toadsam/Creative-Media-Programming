@@ -1,5 +1,7 @@
 extends Area2D
 
+#Area2D for ladders
+
 func _on_body_entered(body):
 	if body is Player:
 		Player.is_on_ladder = true

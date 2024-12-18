@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cjn6i2pbadnq3"
-path="res://.godot/imported/Ladder1.png-9f8ce7862e2385a839d73db3a188859f.ctex"
+path="res://.godot/imported/Ladder1.png-ab683e191423d80a50f9bf3ff3e990c2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Parkjiheon/Decorate/Ladder1.png"
-dest_files=["res://.godot/imported/Ladder1.png-9f8ce7862e2385a839d73db3a188859f.ctex"]
+source_file="res://ParkJiHeon/Decorate/Ladder1.png"
+dest_files=["res://.godot/imported/Ladder1.png-ab683e191423d80a50f9bf3ff3e990c2.ctex"]
 
 [params]
 

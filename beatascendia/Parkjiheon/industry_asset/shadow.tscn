@@ -1,9 +1,9 @@
 [gd_scene load_steps=21 format=3 uid="uid://bubhyp2kv0njm"]
 
-[ext_resource type="Texture2D" uid="uid://ruu6upo8kohl" path="res://KBW/craftpix-net-856554-free-3-cyberpunk-characters-pixel-art/1 Biker/Biker_jump.png" id="1_6qd40"]
-[ext_resource type="Script" path="res://KBW/shadow.gd" id="1_piue3"]
-[ext_resource type="Texture2D" uid="uid://dp4l4vevc0n0i" path="res://KBW/craftpix-net-856554-free-3-cyberpunk-characters-pixel-art/1 Biker/Biker_run.png" id="2_l1itf"]
-[ext_resource type="Texture2D" uid="uid://butaqb7d4lvow" path="res://KBW/craftpix-net-856554-free-3-cyberpunk-characters-pixel-art/1 Biker/Biker_idle.png" id="3_8jaqm"]
+[ext_resource type="Texture2D" uid="uid://ruu6upo8kohl" path="res://KimByungWook/craftpix-net-856554-free-3-cyberpunk-characters-pixel-art/1 Biker/Biker_jump.png" id="1_6qd40"]
+[ext_resource type="Script" path="res://KimByungWook/shadow.gd" id="1_piue3"]
+[ext_resource type="Texture2D" uid="uid://dp4l4vevc0n0i" path="res://KimByungWook/craftpix-net-856554-free-3-cyberpunk-characters-pixel-art/1 Biker/Biker_run.png" id="2_l1itf"]
+[ext_resource type="Texture2D" uid="uid://butaqb7d4lvow" path="res://KimByungWook/craftpix-net-856554-free-3-cyberpunk-characters-pixel-art/1 Biker/Biker_idle.png" id="3_8jaqm"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qqwah"]
 atlas = ExtResource("1_6qd40")

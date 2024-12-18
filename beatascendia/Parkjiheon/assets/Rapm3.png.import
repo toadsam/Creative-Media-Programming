@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://14cn6hukwtx0"
-path="res://.godot/imported/Rapm3.png-bacc18aa09fb7d52470c49f614b1d4d9.ctex"
+path="res://.godot/imported/Rapm3.png-ba110072021c2818b8bcdf62cf20d1cd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Parkjiheon/assets/Rapm3.png"
-dest_files=["res://.godot/imported/Rapm3.png-bacc18aa09fb7d52470c49f614b1d4d9.ctex"]
+source_file="res://ParkJiHeon/assets/Rapm3.png"
+dest_files=["res://.godot/imported/Rapm3.png-ba110072021c2818b8bcdf62cf20d1cd.ctex"]
 
 [params]
 

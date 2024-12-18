@@ -1,12 +1,12 @@
 [gd_resource type="TileSet" load_steps=15 format=3 uid="uid://dmtbt4dt6yofu"]
 
-[ext_resource type="Texture2D" uid="uid://cm2iwiluwg5dt" path="res://Parkjiheon/industry_asset/IndustrialTile_04.png" id="1_215wf"]
-[ext_resource type="Texture2D" uid="uid://dd4ygtklcg2yr" path="res://Parkjiheon/industry_asset/IndustrialTile_06.png" id="2_teil0"]
-[ext_resource type="Texture2D" uid="uid://baji74vrswl1v" path="res://Parkjiheon/industry_asset/IndustrialTile_22.png" id="3_bl2j5"]
-[ext_resource type="Texture2D" uid="uid://6rn0uawnw8i4" path="res://Parkjiheon/industry_asset/IndustrialTile_24.png" id="4_5kyui"]
-[ext_resource type="Texture2D" uid="uid://bfhc6tg7b81d8" path="res://Parkjiheon/industry_asset/IndustrialTile_79.png" id="5_bdrs2"]
-[ext_resource type="Texture2D" uid="uid://bo628drya31cp" path="res://Parkjiheon/industry_asset/IndustrialTile_80.png" id="6_41klq"]
-[ext_resource type="Texture2D" uid="uid://dddd8g0efsido" path="res://Parkjiheon/Decorate/bench2.png" id="7_rkxp1"]
+[ext_resource type="Texture2D" uid="uid://cm2iwiluwg5dt" path="res://ParkJiHeon/industry_asset/IndustrialTile_04.png" id="1_215wf"]
+[ext_resource type="Texture2D" uid="uid://dd4ygtklcg2yr" path="res://ParkJiHeon/industry_asset/IndustrialTile_06.png" id="2_teil0"]
+[ext_resource type="Texture2D" uid="uid://baji74vrswl1v" path="res://ParkJiHeon/industry_asset/IndustrialTile_22.png" id="3_bl2j5"]
+[ext_resource type="Texture2D" uid="uid://6rn0uawnw8i4" path="res://ParkJiHeon/industry_asset/IndustrialTile_24.png" id="4_5kyui"]
+[ext_resource type="Texture2D" uid="uid://bfhc6tg7b81d8" path="res://ParkJiHeon/industry_asset/IndustrialTile_79.png" id="5_bdrs2"]
+[ext_resource type="Texture2D" uid="uid://bo628drya31cp" path="res://ParkJiHeon/industry_asset/IndustrialTile_80.png" id="6_41klq"]
+[ext_resource type="Texture2D" uid="uid://dddd8g0efsido" path="res://ParkJiHeon/Decorate/bench2.png" id="7_rkxp1"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qvjsr"]
 texture = ExtResource("1_215wf")

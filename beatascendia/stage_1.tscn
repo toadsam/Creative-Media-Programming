@@ -1,14 +1,14 @@
 [gd_scene load_steps=10 format=3 uid="uid://dx1ockwwrocvv"]
 
-[ext_resource type="PackedScene" uid="uid://dpxbpwln8ypom" path="res://Parkjiheon/Background.tscn" id="1_f83ow"]
-[ext_resource type="PackedScene" uid="uid://dbxdkfq8455jp" path="res://KBW/shadow.tscn" id="2_0ugiv"]
-[ext_resource type="PackedScene" uid="uid://v5rfwmb3h8kg" path="res://KBW/testPlayer.tscn" id="3_l8a3b"]
+[ext_resource type="PackedScene" uid="uid://dpxbpwln8ypom" path="res://ParkJiHeon/Background.tscn" id="1_f83ow"]
+[ext_resource type="PackedScene" uid="uid://dbxdkfq8455jp" path="res://KimByungWook/shadow.tscn" id="2_0ugiv"]
+[ext_resource type="PackedScene" uid="uid://v5rfwmb3h8kg" path="res://KimByungWook/testPlayer.tscn" id="3_l8a3b"]
 [ext_resource type="PackedScene" uid="uid://bwdjre2ke5o1f" path="res://SoHyeongBeen/music_system.tscn" id="4_63wt5"]
 [ext_resource type="Script" path="res://SoHyeongBeen/walk_sound.gd" id="5_3emn1"]
 [ext_resource type="AudioStream" uid="uid://cd217123sievs" path="res://SoHyeongBeen/sounds/player jump.mp3" id="6_k8fs2"]
 [ext_resource type="Script" path="res://SoHyeongBeen/jump_sound.gd" id="7_eenl2"]
-[ext_resource type="PackedScene" uid="uid://drry0xvvj7tpv" path="res://JJH/StealthEnemy.tscn" id="8_tq68b"]
-[ext_resource type="PackedScene" uid="uid://bg8hg4y06blgo" path="res://JJH/Enemy.tscn" id="9_a1xhb"]
+[ext_resource type="PackedScene" uid="uid://drry0xvvj7tpv" path="res://JeongJeaHoon/StealthEnemy.tscn" id="8_tq68b"]
+[ext_resource type="PackedScene" uid="uid://bg8hg4y06blgo" path="res://JeongJeaHoon/Enemy.tscn" id="9_a1xhb"]
 
 [node name="Stage1" type="Node2D"]
 

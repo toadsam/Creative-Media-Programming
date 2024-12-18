@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c6abvcdcoj8jj"
-path="res://.godot/imported/TimeRewinder.png-c8f1294fd174bdeba57f43cf480f1639.ctex"
+path="res://.godot/imported/TimeRewinder.png-05be16da1d27f7a1cac5d5a5f2b4e21c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Parkjiheon/Decorate/TimeRewinder.png"
-dest_files=["res://.godot/imported/TimeRewinder.png-c8f1294fd174bdeba57f43cf480f1639.ctex"]
+source_file="res://ParkJiHeon/Decorate/TimeRewinder.png"
+dest_files=["res://.godot/imported/TimeRewinder.png-05be16da1d27f7a1cac5d5a5f2b4e21c.ctex"]
 
 [params]
 

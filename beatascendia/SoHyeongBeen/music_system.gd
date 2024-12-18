@@ -13,11 +13,10 @@ var beat_interval: float
 var next_beat_time: float = 0.0
 var is_music_started: bool = false
 var beat: int = 0
-var music_system_output: int = -1  # -1 = 음악 재생 중 아님, 0 = not 박자 타이밍, 1 = 박자 타이밍
+var music_system_output: int = -1  # -1 = Not playing music, 0 = not beat timing, 1 = beat timing
 
 func _ready() -> void:
 	if not music_node:
-		push_error("MusicSystem의 하위 노드 " + music_node_name + " 없음")
 		return
 	
 	if bgm_stream:
@@ -46,7 +45,6 @@ func stop_music() -> void:
 	music_node.stop()
 	is_music_started = false
 	music_system_output = -1
-	print("음악 재생 종료")
 
 func check_beat() -> void:
 	if not music_node.playing:
@@ -78,8 +76,4 @@ func rewind_music() -> void:
 		rewind_node.play()
 
 func _on_music_finished() -> void:
-	print("음악이 끝났습니다!")
 	stop_music()
-
-func _on_is_beat_signal(beat: int) -> void:
-	print("지금 beat는 ", beat)

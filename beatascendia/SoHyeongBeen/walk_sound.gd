@@ -1,5 +1,6 @@
 extends AudioStreamPlayer2D
 
+#For player walk sound
 @onready var player = $".."
 var walk_sounds: Array = [
 	preload("res://SoHyeongBeen/sounds/player walk1.mp3"),
