@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=4 uid="uid://du0nx2pk52iww"]
+[gd_scene load_steps=13 format=4 uid="uid://du0nx2pk52iww"]
 
 [ext_resource type="Script" path="res://SoHyeongBeen/control.gd" id="1_c0c0o"]
 [ext_resource type="FontFile" uid="uid://c6kce6fci7l3n" path="res://SoHyeongBeen/ui pack/10 Font/CyberpunkCraftpixPixel.otf" id="2_1p5kl"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://cm7f23te0r7jo" path="res://SoHyeongBeen/ui pack/6 Buttons/10/10_05.png" id="5_3up5n"]
 [ext_resource type="Texture2D" uid="uid://biy5842hc4yim" path="res://SoHyeongBeen/ui pack/6 Buttons/10/10_06.png" id="6_uy53y"]
 [ext_resource type="Texture2D" uid="uid://csap21qbr7x27" path="res://SoHyeongBeen/ui pack/6 Buttons/10/10_07.png" id="7_dxfc2"]
+[ext_resource type="PackedScene" uid="uid://bl5gqq3wpnot6" path="res://SoHyeongBeen/start_scene.tscn" id="10_l4ing"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5di3k"]
 texture = ExtResource("2_dmcu1")
@@ -547,6 +548,8 @@ theme_override_colors/font_color = Color(0.76662, 0.76662, 0.76662, 1)
 theme_override_fonts/font = ExtResource("2_1p5kl")
 text = "Resume"
 flat = true
+
+[node name="StartScene" parent="." instance=ExtResource("10_l4ing")]
 
 [connection signal="button_down" from="BoxContainer/ESC UI/ButtonSystem/button" to="BoxContainer/ESC UI/ButtonSystem" method="_on_button_button_down"]
 [connection signal="button_up" from="BoxContainer/ESC UI/ButtonSystem/button" to="BoxContainer/ESC UI/ButtonSystem" method="_on_button_button_up"]

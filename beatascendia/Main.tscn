@@ -1,35 +1,42 @@
-[gd_scene load_steps=8 format=3 uid="uid://ddflumcapg46p"]
+[gd_scene load_steps=10 format=3 uid="uid://ddflumcapg46p"]
 
+[ext_resource type="PackedScene" uid="uid://bl5gqq3wpnot6" path="res://SoHyeongBeen/start_scene.tscn" id="1_3emh2"]
+[ext_resource type="Script" path="res://realmain.gd" id="1_8w7u5"]
 [ext_resource type="PackedScene" uid="uid://bwdjre2ke5o1f" path="res://SoHyeongBeen/music_system.tscn" id="1_cqyfs"]
 [ext_resource type="PackedScene" uid="uid://dpxbpwln8ypom" path="res://Parkjiheon/Background.tscn" id="1_t68hg"]
-[ext_resource type="PackedScene" uid="uid://c4u70ho0i42w8" path="res://KBW/shadow.tscn" id="2_bbapp"]
+[ext_resource type="PackedScene" uid="uid://dbxdkfq8455jp" path="res://KBW/shadow.tscn" id="2_bbapp"]
 [ext_resource type="PackedScene" uid="uid://v5rfwmb3h8kg" path="res://KBW/testPlayer.tscn" id="3_7lnh6"]
 [ext_resource type="AudioStream" uid="uid://cd217123sievs" path="res://SoHyeongBeen/sounds/player jump.mp3" id="5_brj4j"]
 [ext_resource type="Script" path="res://SoHyeongBeen/walk_sound.gd" id="5_g4rok"]
 [ext_resource type="Script" path="res://SoHyeongBeen/jump_sound.gd" id="6_2ojgm"]
 
-[node name="Main" type="Node2D"]
+[node name="REALMAIN" type="Node2D"]
+script = ExtResource("1_8w7u5")
 
-[node name="Background" parent="." instance=ExtResource("1_t68hg")]
+[node name="StartScene" parent="." instance=ExtResource("1_3emh2")]
+
+[node name="Main" type="Node2D" parent="."]
+
+[node name="Background" parent="Main" instance=ExtResource("1_t68hg")]
 show_behind_parent = true
 position = Vector2(-4, 7)
 
-[node name="Shadow" parent="." instance=ExtResource("2_bbapp")]
+[node name="Shadow" parent="Main" instance=ExtResource("2_bbapp")]
 top_level = true
 position = Vector2(200, 143)
 collision_layer = 1
 collision_mask = 65534
 
-[node name="TestPlayer" parent="." instance=ExtResource("3_7lnh6")]
+[node name="TestPlayer" parent="Main" instance=ExtResource("3_7lnh6")]
 top_level = true
 position = Vector2(193, 144)
 collision_mask = 65534
 
-[node name="MusicSystem" parent="TestPlayer" instance=ExtResource("1_cqyfs")]
+[node name="MusicSystem" parent="Main/TestPlayer" instance=ExtResource("1_cqyfs")]
 
-[node name="WalkSound" type="AudioStreamPlayer2D" parent="TestPlayer"]
+[node name="WalkSound" type="AudioStreamPlayer2D" parent="Main/TestPlayer"]
 script = ExtResource("5_g4rok")
 
-[node name="JumpSound" type="AudioStreamPlayer2D" parent="TestPlayer"]
+[node name="JumpSound" type="AudioStreamPlayer2D" parent="Main/TestPlayer"]
 stream = ExtResource("5_brj4j")
 script = ExtResource("6_2ojgm")
