@@ -1,5 +1,6 @@
-[gd_scene load_steps=11 format=3 uid="uid://bl5gqq3wpnot6"]
+[gd_scene load_steps=12 format=3 uid="uid://bl5gqq3wpnot6"]
 
+[ext_resource type="Script" path="res://SoHyeongBeen/start_scene.gd" id="1_i7o7j"]
 [ext_resource type="Texture2D" uid="uid://def87dsgadcx0" path="res://SoHyeongBeen/캡처_2024_12_18_12_18_05_852.png" id="1_s08mc"]
 [ext_resource type="Texture2D" uid="uid://cjgrs5ewxo6ai" path="res://SoHyeongBeen/ui pack/5 Logo/Logo2.png" id="2_muxn6"]
 [ext_resource type="FontFile" uid="uid://c6kce6fci7l3n" path="res://SoHyeongBeen/ui pack/10 Font/CyberpunkCraftpixPixel.otf" id="3_j0531"]
@@ -12,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://dwwgmw50ktvap" path="res://SoHyeongBeen/ui pack/6 Buttons/10/10_03.png" id="10_0l1n5"]
 
 [node name="StartScene" type="CanvasLayer"]
+script = ExtResource("1_i7o7j")
 
 [node name="BoxContainer" type="BoxContainer" parent="."]
 anchors_preset = 8
@@ -273,10 +275,13 @@ flat = true
 
 [connection signal="button_down" from="BoxContainer/Buttons/ButtonSystem/button" to="BoxContainer/Buttons/ButtonSystem" method="_on_button_button_down"]
 [connection signal="button_up" from="BoxContainer/Buttons/ButtonSystem/button" to="BoxContainer/Buttons/ButtonSystem" method="_on_button_button_up"]
+[connection signal="pressed" from="BoxContainer/Buttons/ButtonSystem/button" to="." method="_on_button_pressed_1"]
 [connection signal="pressed" from="BoxContainer/Buttons/ButtonSystem/button" to="BoxContainer/Buttons/ButtonSystem" method="_on_button_pressed"]
 [connection signal="button_down" from="BoxContainer/Buttons/ButtonSystem2/button" to="BoxContainer/Buttons/ButtonSystem2" method="_on_button_button_down"]
 [connection signal="button_up" from="BoxContainer/Buttons/ButtonSystem2/button" to="BoxContainer/Buttons/ButtonSystem2" method="_on_button_button_up"]
+[connection signal="pressed" from="BoxContainer/Buttons/ButtonSystem2/button" to="." method="_on_button_pressed_2"]
 [connection signal="pressed" from="BoxContainer/Buttons/ButtonSystem2/button" to="BoxContainer/Buttons/ButtonSystem2" method="_on_button_pressed"]
 [connection signal="button_down" from="BoxContainer/Buttons/ButtonSystem3/button" to="BoxContainer/Buttons/ButtonSystem3" method="_on_button_button_down"]
 [connection signal="button_up" from="BoxContainer/Buttons/ButtonSystem3/button" to="BoxContainer/Buttons/ButtonSystem3" method="_on_button_button_up"]
+[connection signal="pressed" from="BoxContainer/Buttons/ButtonSystem3/button" to="." method="_on_button_pressed_3"]
 [connection signal="pressed" from="BoxContainer/Buttons/ButtonSystem3/button" to="BoxContainer/Buttons/ButtonSystem3" method="_on_button_pressed"]
