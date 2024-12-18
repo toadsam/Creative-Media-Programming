@@ -1,21 +1,22 @@
 [gd_scene load_steps=4 format=3 uid="uid://bwdjre2ke5o1f"]
 
 [ext_resource type="Script" path="res://SoHyeongBeen/music_system.gd" id="1_xhcjq"]
-[ext_resource type="AudioStream" uid="uid://cfsa1h3cbopku" path="res://SoHyeongBeen/sounds/Undertale OST 069 - For the Fans.mp3" id="2_oddrm"]
+[ext_resource type="AudioStream" uid="uid://dsj4imnym0iyd" path="res://SoHyeongBeen/sounds/Starry Quest Stage1 20minutes 160bpm.mp3" id="2_lstds"]
 [ext_resource type="AudioStream" uid="uid://42a0svsfo5wo" path="res://SoHyeongBeen/sounds/Tape Rewind - Gaming Sound Effect (HD).mp3" id="3_omrhj"]
 
 [node name="MusicSystem" type="Node2D"]
-scale = Vector2(7.04, 7.04)
 script = ExtResource("1_xhcjq")
+bgm_stream = ExtResource("2_lstds")
 music_node_name = "BGM"
-bpm = 94.0
+bpm = 160.0
 
 [node name="BGM" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("2_oddrm")
 max_distance = 1e+13
+attenuation = 0.0150928
 
 [node name="Rewind" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_omrhj")
 max_distance = 9.22337e+18
 
+[connection signal="is_beat_signal" from="." to="." method="_on_is_beat_signal"]
 [connection signal="finished" from="BGM" to="." method="_on_music_finished"]

@@ -1,0 +1,48 @@
+[gd_scene load_steps=9 format=3 uid="uid://cgk7q3nostuht"]
+
+[ext_resource type="PackedScene" uid="uid://dpxbpwln8ypom" path="res://Parkjiheon/Background.tscn" id="1_hu20s"]
+[ext_resource type="PackedScene" uid="uid://c4u70ho0i42w8" path="res://KBW/shadow.tscn" id="2_mdyvn"]
+[ext_resource type="PackedScene" uid="uid://v5rfwmb3h8kg" path="res://KBW/testPlayer.tscn" id="3_rdkj7"]
+[ext_resource type="PackedScene" uid="uid://bg8hg4y06blgo" path="res://JJH/Enemy.tscn" id="4_d1jwy"]
+[ext_resource type="PackedScene" uid="uid://bifn2pj5o4iyh" path="res://JJH/Enemy2.tscn" id="5_jyvw2"]
+[ext_resource type="Texture2D" uid="uid://dq1tqyexygamd" path="res://JJH/스크린샷 2024-12-10 144352.png" id="6_pvmkn"]
+[ext_resource type="PackedScene" uid="uid://c1pdoo50iy2i6" path="res://JJH/BombEnemy.tscn" id="7_v1y4s"]
+[ext_resource type="PackedScene" uid="uid://drry0xvvj7tpv" path="res://JJH/StealthEnemy.tscn" id="8_aex4p"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Background" parent="." instance=ExtResource("1_hu20s")]
+show_behind_parent = true
+
+[node name="Shadow" parent="." instance=ExtResource("2_mdyvn")]
+top_level = true
+position = Vector2(573, 41)
+collision_layer = 1
+collision_mask = 65534
+
+[node name="TestPlayer" parent="." instance=ExtResource("3_rdkj7")]
+top_level = true
+position = Vector2(1196, 583)
+collision_mask = 65534
+
+[node name="Enemy" parent="." instance=ExtResource("4_d1jwy")]
+position = Vector2(1567, 106)
+collision_mask = 0
+
+[node name="Enemy2" parent="." instance=ExtResource("5_jyvw2")]
+position = Vector2(876, 95)
+
+[node name="스크린샷2024-12-10144352" type="Sprite2D" parent="."]
+position = Vector2(828.188, 98.1529)
+scale = Vector2(0.0558108, 0.0558108)
+texture = ExtResource("6_pvmkn")
+
+[node name="BombEnemy" parent="." instance=ExtResource("7_v1y4s")]
+position = Vector2(1145, 593)
+collision_layer = 254
+
+[node name="StealthEnemy" parent="." instance=ExtResource("8_aex4p")]
+position = Vector2(347, 609)
+scale = Vector2(1.99, 1.99)
+
+[connection signal="body_entered" from="BombEnemy" to="BombEnemy" method="_on_body_entered"]
