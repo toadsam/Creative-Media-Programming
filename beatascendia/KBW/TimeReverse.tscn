@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://bav0qr50nam84" path="res://KBW/craftpix-net-924041-power-station-free-tileset-pixel-art/1 Tiles/Tileset.png" id="1_fwmis"]
 [ext_resource type="PackedScene" uid="uid://v5rfwmb3h8kg" path="res://KBW/testPlayer.tscn" id="2_eqj44"]
-[ext_resource type="PackedScene" uid="uid://c4u70ho0i42w8" path="res://KBW/shadow.tscn" id="3_65gj8"]
+[ext_resource type="PackedScene" uid="uid://dbxdkfq8455jp" path="res://KBW/shadow.tscn" id="3_65gj8"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ccwkc"]
 texture = ExtResource("1_fwmis")

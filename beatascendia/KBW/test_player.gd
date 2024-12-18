@@ -12,6 +12,7 @@ class_name Player
 
 @onready var shadow = get_parent().get_node("Shadow")
 
+
 var prePosition = []  # 플레이어의 이전 좌표를 저장하는 배열
 var timeDelay = 3000.0  # Shadow가 따라할 시간 간격(ms)
 var recordInterval = 10.0  # 좌표를 기록하는 간격(ms)
@@ -33,7 +34,7 @@ const Climpspeed = 100
 
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
-func _physics_process(delta):
+func _physics_process(delta):	
 	velocity.y += gravity * delta
 	
 	if not isRewinding:
