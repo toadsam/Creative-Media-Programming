@@ -1,7 +1,6 @@
-[gd_scene load_steps=76 format=4 uid="uid://dpxbpwln8ypom"]
+[gd_scene load_steps=74 format=4 uid="uid://dpxbpwln8ypom"]
 
 [ext_resource type="TileSet" uid="uid://sgm1oltpsol1" path="res://Parkjiheon/Ground.tres" id="1_5sov5"]
-[ext_resource type="PackedScene" uid="uid://v5rfwmb3h8kg" path="res://KBW/testPlayer.tscn" id="1_fdfvk"]
 [ext_resource type="Script" path="res://Parkjiheon/background.gd" id="1_supkf"]
 [ext_resource type="TileSet" uid="uid://dmtbt4dt6yofu" path="res://Parkjiheon/Industry.tres" id="2_nydm5"]
 [ext_resource type="Texture2D" uid="uid://f7cw5ukfveev" path="res://Parkjiheon/assets/Tileset.png" id="3_noyqs"]
@@ -38,7 +37,6 @@
 [ext_resource type="Texture2D" uid="uid://bjochbo40608s" path="res://Parkjiheon/industry_asset/Ladder1.png" id="24_677ie"]
 [ext_resource type="Texture2D" uid="uid://07uw5xag2875" path="res://Parkjiheon/Backgrond_image/17.png" id="33_ddlmt"]
 [ext_resource type="Script" path="res://Parkjiheon/dead_zone.gd" id="36_sgch1"]
-[ext_resource type="PackedScene" uid="uid://c4u70ho0i42w8" path="res://KBW/shadow.tscn" id="38_6ik34"]
 [ext_resource type="Script" path="res://Parkjiheon/fountain.gd" id="40_1t5yy"]
 [ext_resource type="FontFile" uid="uid://bwdr1cg4odoye" path="res://Parkjiheon/Font/CyberpunkCraftpixPixel.otf" id="40_5agtk"]
 [ext_resource type="Texture2D" uid="uid://bvcsepr5q8qmm" path="res://Parkjiheon/Decorate/Tree3.png" id="42_xu4ke"]
@@ -2741,11 +2739,6 @@ size = Vector2(75, 185)
 [node name="Background" type="Node2D"]
 script = ExtResource("1_supkf")
 
-[node name="TestPlayer" parent="." instance=ExtResource("1_fdfvk")]
-top_level = true
-position = Vector2(921, 15)
-collision_mask = 254
-
 [node name="TileMap" type="TileMap" parent="."]
 format = 2
 
@@ -3099,11 +3092,6 @@ metadata/_edit_group_ = true
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DeadZone"]
 position = Vector2(-7.5, 0)
 shape = SubResource("RectangleShape2D_t22xk")
-
-[node name="Shadow" parent="." instance=ExtResource("38_6ik34")]
-top_level = true
-collision_layer = 1
-collision_mask = 30
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 

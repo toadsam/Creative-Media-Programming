@@ -1,6 +1,6 @@
 [gd_scene load_steps=13 format=3 uid="uid://ddflumcapg46p"]
 
-[ext_resource type="PackedScene" uid="uid://c2ef34j7ahkgn" path="res://SoHyeongBeen/start_scene.tscn" id="1_3emh2"]
+[ext_resource type="PackedScene" path="res://SoHyeongBeen/start_scene.tscn" id="1_3emh2"]
 [ext_resource type="Script" path="res://realmain.gd" id="1_8w7u5"]
 [ext_resource type="PackedScene" uid="uid://bwdjre2ke5o1f" path="res://SoHyeongBeen/music_system.tscn" id="1_cqyfs"]
 [ext_resource type="PackedScene" uid="uid://dpxbpwln8ypom" path="res://Parkjiheon/Background.tscn" id="1_t68hg"]

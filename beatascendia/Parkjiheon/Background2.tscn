@@ -1,8 +1,6 @@
-[gd_scene load_steps=87 format=4 uid="uid://dhxgpsak8p11i"]
+[gd_scene load_steps=85 format=4 uid="uid://c4nubssdvg4do"]
 
-[ext_resource type="PackedScene" uid="uid://c4u70ho0i42w8" path="res://KBW/shadow.tscn" id="1_kdc7q"]
 [ext_resource type="Script" path="res://Parkjiheon/background_2.gd" id="1_nlq61"]
-[ext_resource type="PackedScene" uid="uid://v5rfwmb3h8kg" path="res://KBW/testPlayer.tscn" id="2_bxdtp"]
 [ext_resource type="Texture2D" uid="uid://y3sxjttfw4lq" path="res://Parkjiheon/Backgrond_image/100.png" id="2_itt25"]
 [ext_resource type="Texture2D" uid="uid://gcnbdmrdpl4e" path="res://Parkjiheon/Backgrond_image/1.png" id="2_p8p38"]
 [ext_resource type="Texture2D" uid="uid://f7cw5ukfveev" path="res://Parkjiheon/assets/Tileset.png" id="2_vuhud"]
@@ -16,7 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://dja0cauvy4yg" path="res://Parkjiheon/Decorate/Shop11.png" id="5_o8umf"]
 [ext_resource type="Texture2D" uid="uid://dmoi42t1yvlna" path="res://Parkjiheon/assets/moving_object1.png" id="5_pk8bo"]
 [ext_resource type="Texture2D" uid="uid://crrfxp246spt7" path="res://Parkjiheon/Decorate/Time_Rewinder.png" id="5_y3dyv"]
-[ext_resource type="Texture2D" uid="uid://bc6mbperoma73" path="res://Parkjiheon/assets/branch.png.tres" id="6_u4asq"]
+[ext_resource type="Texture2D" path="res://Parkjiheon/assets/branch.png.tres" id="6_u4asq"]
 [ext_resource type="Texture2D" uid="uid://nd5v6c0boeep" path="res://Parkjiheon/Decorate/Shop12.png" id="6_w3i6n"]
 [ext_resource type="Texture2D" uid="uid://cjn6i2pbadnq3" path="res://Parkjiheon/Decorate/Ladder1.png" id="7_cobak"]
 [ext_resource type="Script" path="res://Parkjiheon/moving_object_2.gd" id="7_i1krk"]
@@ -5317,8 +5315,6 @@ size = Vector2(80, 43)
 [node name="Background2" type="Node2D"]
 script = ExtResource("1_nlq61")
 
-[node name="Shadow" parent="." instance=ExtResource("1_kdc7q")]
-
 [node name="TileMap" type="TileMap" parent="."]
 position = Vector2(0, -2)
 format = 2
@@ -5578,10 +5574,6 @@ texture = ExtResource("6_u4asq")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Branch"]
 position = Vector2(-0.5, 1.5)
 shape = SubResource("RectangleShape2D_g7m3v")
-
-[node name="TestPlayer" parent="." instance=ExtResource("2_bxdtp")]
-position = Vector2(4879, -500)
-collision_mask = 254
 
 [node name="Ladder" type="Area2D" parent="."]
 position = Vector2(2409, 172)
