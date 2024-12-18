@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://bl5gqq3wpnot6"]
+[gd_scene load_steps=13 format=3 uid="uid://c2ef34j7ahkgn"]
 
 [ext_resource type="Script" path="res://SoHyeongBeen/start_scene.gd" id="1_i7o7j"]
 [ext_resource type="Texture2D" uid="uid://def87dsgadcx0" path="res://SoHyeongBeen/캡처_2024_12_18_12_18_05_852.png" id="1_s08mc"]

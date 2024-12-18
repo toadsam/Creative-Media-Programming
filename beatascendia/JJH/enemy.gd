@@ -1,12 +1,11 @@
 extends CharacterBody2D
 
 @export var speed: float = 150.0  # 적의 이동 속도
-@onready var player = null  # 플레이어 노드
+@onready var player = get_parent().get_node("TestPlayer")  # 플레이어 노드
 var is_paused: bool = false  # 적이 멈춰 있는지 확인하는 플래그
 
 func _ready():
 	# 절대 경로로 플레이어 찾기
-	player = get_node_or_null("/root/Main(JJH)/TestPlayer")
 	if not player:
 		# 상대 경로로 시도
 		player = $"../TestPlayer"  # 적과 같은 부모 아래에 있을 때

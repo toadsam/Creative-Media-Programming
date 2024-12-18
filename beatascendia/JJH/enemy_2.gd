@@ -8,7 +8,7 @@ var start_position: Vector2  # 시작 위치
 var moving_right: bool = true  # 현재 이동 방향
 var current_distance: float = 0.0  # 현재 이동한 거리
 
-@onready var player = null  # 플레이어 노드
+@onready var player = get_parent().get_node("TestPlayer")  # 플레이어 노드
 
 func _ready():
 	# 초기 위치 저장

@@ -1,6 +1,6 @@
-[gd_scene load_steps=10 format=3 uid="uid://ddflumcapg46p"]
+[gd_scene load_steps=13 format=3 uid="uid://ddflumcapg46p"]
 
-[ext_resource type="PackedScene" uid="uid://bl5gqq3wpnot6" path="res://SoHyeongBeen/start_scene.tscn" id="1_3emh2"]
+[ext_resource type="PackedScene" uid="uid://c2ef34j7ahkgn" path="res://SoHyeongBeen/start_scene.tscn" id="1_3emh2"]
 [ext_resource type="Script" path="res://realmain.gd" id="1_8w7u5"]
 [ext_resource type="PackedScene" uid="uid://bwdjre2ke5o1f" path="res://SoHyeongBeen/music_system.tscn" id="1_cqyfs"]
 [ext_resource type="PackedScene" uid="uid://dpxbpwln8ypom" path="res://Parkjiheon/Background.tscn" id="1_t68hg"]
@@ -9,6 +9,9 @@
 [ext_resource type="AudioStream" uid="uid://cd217123sievs" path="res://SoHyeongBeen/sounds/player jump.mp3" id="5_brj4j"]
 [ext_resource type="Script" path="res://SoHyeongBeen/walk_sound.gd" id="5_g4rok"]
 [ext_resource type="Script" path="res://SoHyeongBeen/jump_sound.gd" id="6_2ojgm"]
+[ext_resource type="PackedScene" uid="uid://c1pdoo50iy2i6" path="res://JJH/BombEnemy.tscn" id="10_evufj"]
+[ext_resource type="PackedScene" uid="uid://bg8hg4y06blgo" path="res://JJH/Enemy.tscn" id="11_itwll"]
+[ext_resource type="PackedScene" uid="uid://drry0xvvj7tpv" path="res://JJH/StealthEnemy.tscn" id="12_ipx52"]
 
 [node name="REALMAIN" type="Node2D"]
 script = ExtResource("1_8w7u5")
@@ -40,3 +43,12 @@ script = ExtResource("5_g4rok")
 [node name="JumpSound" type="AudioStreamPlayer2D" parent="Main/TestPlayer"]
 stream = ExtResource("5_brj4j")
 script = ExtResource("6_2ojgm")
+
+[node name="StealthEnemy" parent="Main" instance=ExtResource("12_ipx52")]
+position = Vector2(645, 671)
+
+[node name="Enemy" parent="Main" instance=ExtResource("11_itwll")]
+position = Vector2(679, 817)
+
+[node name="BombEnemy" parent="Main" instance=ExtResource("10_evufj")]
+position = Vector2(100, 969)
