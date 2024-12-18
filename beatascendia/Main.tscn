@@ -1,14 +1,17 @@
-[gd_scene load_steps=8 format=3 uid="uid://ddflumcapg46p"]
+[gd_scene load_steps=9 format=3 uid="uid://ddflumcapg46p"]
 
+[ext_resource type="PackedScene" uid="uid://bl5gqq3wpnot6" path="res://SoHyeongBeen/start_scene.tscn" id="1_3emh2"]
 [ext_resource type="PackedScene" uid="uid://bwdjre2ke5o1f" path="res://SoHyeongBeen/music_system.tscn" id="1_cqyfs"]
 [ext_resource type="PackedScene" uid="uid://dpxbpwln8ypom" path="res://Parkjiheon/Background.tscn" id="1_t68hg"]
-[ext_resource type="PackedScene" uid="uid://c4u70ho0i42w8" path="res://KBW/shadow.tscn" id="2_bbapp"]
+[ext_resource type="PackedScene" uid="uid://dbxdkfq8455jp" path="res://KBW/shadow.tscn" id="2_bbapp"]
 [ext_resource type="PackedScene" uid="uid://v5rfwmb3h8kg" path="res://KBW/testPlayer.tscn" id="3_7lnh6"]
 [ext_resource type="AudioStream" uid="uid://cd217123sievs" path="res://SoHyeongBeen/sounds/player jump.mp3" id="5_brj4j"]
 [ext_resource type="Script" path="res://SoHyeongBeen/walk_sound.gd" id="5_g4rok"]
 [ext_resource type="Script" path="res://SoHyeongBeen/jump_sound.gd" id="6_2ojgm"]
 
 [node name="Main" type="Node2D"]
+
+[node name="StartScene" parent="." instance=ExtResource("1_3emh2")]
 
 [node name="Background" parent="." instance=ExtResource("1_t68hg")]
 show_behind_parent = true
