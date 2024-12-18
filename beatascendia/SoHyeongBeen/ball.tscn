@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://b1palyrmribxy"]
+[gd_scene load_steps=5 format=3 uid="uid://dj4c4tm7ti050"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_34dsb"]
 bounce = 0.8

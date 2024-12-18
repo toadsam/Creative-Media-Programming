@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dsj4imnym0iyd"
+path="res://.godot/imported/Starry Quest Stage1 20minutes 160bpm.mp3-4ddd607771790defb2b62c843e792106.mp3str"
+
+[deps]
+
+source_file="res://SoHyeongBeen/sounds/Starry Quest Stage1 20minutes 160bpm.mp3"
+dest_files=["res://.godot/imported/Starry Quest Stage1 20minutes 160bpm.mp3-4ddd607771790defb2b62c843e792106.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
