@@ -7,6 +7,7 @@ class_name Player
 @export var coolTime = 5000.0  # 시간 되감기 능력 쿨타임(ms)
 @onready var shadow = get_parent().get_node("Shadow")
 
+
 var prePosition = []  # 플레이어의 이전 좌표를 저장하는 배열
 var timeDelay = 3000.0  # Shadow가 따라할 시간 간격(ms)
 var recordInterval = 10.0  # 좌표를 기록하는 간격(ms)

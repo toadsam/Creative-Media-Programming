@@ -1,6 +1,7 @@
-[gd_scene load_steps=84 format=4 uid="uid://dhxgpsak8p11i"]
+[gd_scene load_steps=87 format=4 uid="uid://dhxgpsak8p11i"]
 
 [ext_resource type="PackedScene" uid="uid://c4u70ho0i42w8" path="res://KBW/shadow.tscn" id="1_kdc7q"]
+[ext_resource type="Script" path="res://Parkjiheon/background_2.gd" id="1_nlq61"]
 [ext_resource type="PackedScene" uid="uid://v5rfwmb3h8kg" path="res://KBW/testPlayer.tscn" id="2_bxdtp"]
 [ext_resource type="Texture2D" uid="uid://y3sxjttfw4lq" path="res://Parkjiheon/Backgrond_image/100.png" id="2_itt25"]
 [ext_resource type="Texture2D" uid="uid://gcnbdmrdpl4e" path="res://Parkjiheon/Backgrond_image/1.png" id="2_p8p38"]
@@ -51,6 +52,8 @@
 [ext_resource type="Texture2D" uid="uid://cn13c33ia71ok" path="res://Parkjiheon/Decorate/CMP_timerewinder.png" id="29_h00e1"]
 [ext_resource type="Texture2D" uid="uid://cm1ao5ijywd7j" path="res://Parkjiheon/industry_asset/Box1.png" id="34_0k45n"]
 [ext_resource type="Texture2D" uid="uid://dxhf2fh1mvb05" path="res://Parkjiheon/industry_asset/Skillicon7_14.png" id="35_46nu6"]
+[ext_resource type="FontFile" uid="uid://bwdr1cg4odoye" path="res://Parkjiheon/Font/CyberpunkCraftpixPixel.otf" id="52_f8xbs"]
+[ext_resource type="Script" path="res://Parkjiheon/destination.gd" id="53_o1xy0"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rbx2h"]
 texture = ExtResource("2_vuhud")
@@ -5312,6 +5315,7 @@ size = Vector2(30, 96)
 size = Vector2(80, 43)
 
 [node name="Background2" type="Node2D"]
+script = ExtResource("1_nlq61")
 
 [node name="Shadow" parent="." instance=ExtResource("1_kdc7q")]
 
@@ -5576,7 +5580,7 @@ position = Vector2(-0.5, 1.5)
 shape = SubResource("RectangleShape2D_g7m3v")
 
 [node name="TestPlayer" parent="." instance=ExtResource("2_bxdtp")]
-position = Vector2(1468, 767)
+position = Vector2(4794, -478)
 collision_mask = 254
 
 [node name="Ladder" type="Area2D" parent="."]
@@ -5844,6 +5848,7 @@ shape = SubResource("RectangleShape2D_u8cfo")
 [node name="Destination" type="Area2D" parent="."]
 position = Vector2(5141, -403)
 collision_layer = 8
+script = ExtResource("53_o1xy0")
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="Destination"]
@@ -5855,7 +5860,42 @@ texture = ExtResource("18_kfcuk")
 position = Vector2(24, 11.5)
 shape = SubResource("RectangleShape2D_u3pqm")
 
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Stage2" type="Label" parent="CanvasLayer"]
+visible = false
+offset_left = 455.0
+offset_top = 121.0
+offset_right = 692.0
+offset_bottom = 174.0
+theme_override_fonts/font = ExtResource("52_f8xbs")
+theme_override_font_sizes/font_size = 50
+text = "<STAGE 2>
+"
+
+[node name="Description" type="Label" parent="CanvasLayer"]
+visible = false
+offset_left = 353.0
+offset_top = 193.0
+offset_right = 800.0
+offset_bottom = 226.0
+theme_override_fonts/font = ExtResource("52_f8xbs")
+theme_override_font_sizes/font_size = 30
+text = "Get to your Destination!
+"
+
+[node name="Finish" type="Label" parent="CanvasLayer"]
+visible = false
+offset_left = 256.0
+offset_top = 208.0
+offset_right = 924.0
+offset_bottom = 293.0
+theme_override_fonts/font = ExtResource("52_f8xbs")
+theme_override_font_sizes/font_size = 80
+text = "You Finished!!!"
+
 [connection signal="body_entered" from="Lever" to="Lever" method="_on_body_entered"]
 [connection signal="body_entered" from="Lever2" to="Lever2" method="_on_body_entered"]
 [connection signal="body_entered" from="Lever3" to="Lever3" method="_on_body_entered"]
 [connection signal="body_entered" from="Lever4" to="Lever4" method="_on_body_entered"]
+[connection signal="body_entered" from="Destination" to="Destination" method="_on_body_entered"]

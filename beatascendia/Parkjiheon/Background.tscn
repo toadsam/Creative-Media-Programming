@@ -1,6 +1,8 @@
-[gd_scene load_steps=72 format=4 uid="uid://dpxbpwln8ypom"]
+[gd_scene load_steps=74 format=4 uid="uid://dpxbpwln8ypom"]
 
 [ext_resource type="TileSet" uid="uid://sgm1oltpsol1" path="res://Parkjiheon/Ground.tres" id="1_5sov5"]
+[ext_resource type="PackedScene" uid="uid://v5rfwmb3h8kg" path="res://KBW/testPlayer.tscn" id="1_fdfvk"]
+[ext_resource type="Script" path="res://Parkjiheon/background.gd" id="1_supkf"]
 [ext_resource type="TileSet" uid="uid://dmtbt4dt6yofu" path="res://Parkjiheon/Industry.tres" id="2_nydm5"]
 [ext_resource type="Texture2D" uid="uid://f7cw5ukfveev" path="res://Parkjiheon/assets/Tileset.png" id="3_noyqs"]
 [ext_resource type="Texture2D" uid="uid://5dlvj6on8w2d" path="res://Parkjiheon/industry_asset/Pointer1.png" id="4_prayr"]
@@ -2733,6 +2735,12 @@ size = Vector2(115, 20)
 size = Vector2(47, 38)
 
 [node name="Background" type="Node2D"]
+script = ExtResource("1_supkf")
+
+[node name="TestPlayer" parent="." instance=ExtResource("1_fdfvk")]
+top_level = true
+position = Vector2(1592, 81)
+collision_mask = 254
 
 [node name="TileMap" type="TileMap" parent="."]
 format = 2
@@ -3106,6 +3114,36 @@ offset_bottom = 366.0
 theme_override_fonts/font = ExtResource("40_5agtk")
 theme_override_font_sizes/font_size = 80
 text = "You Die!!"
+
+[node name="Gotonextstage" type="Label" parent="CanvasLayer"]
+visible = false
+offset_left = 236.0
+offset_top = 272.0
+offset_right = 975.0
+offset_bottom = 357.0
+theme_override_fonts/font = ExtResource("40_5agtk")
+theme_override_font_sizes/font_size = 80
+text = "You ComPleted!"
+
+[node name="Start" type="Label" parent="CanvasLayer"]
+visible = false
+offset_left = 429.0
+offset_top = 123.0
+offset_right = 700.0
+offset_bottom = 176.0
+theme_override_fonts/font = ExtResource("40_5agtk")
+theme_override_font_sizes/font_size = 50
+text = "<STAGE 1>"
+
+[node name="Description" type="Label" parent="CanvasLayer"]
+visible = false
+offset_left = 390.0
+offset_top = 177.0
+offset_right = 733.0
+offset_bottom = 210.0
+theme_override_fonts/font = ExtResource("40_5agtk")
+theme_override_font_sizes/font_size = 30
+text = "Find a Fountation !"
 
 [node name="Fountain" type="Area2D" parent="."]
 position = Vector2(1905, 61)
