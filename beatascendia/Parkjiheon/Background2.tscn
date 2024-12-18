@@ -5580,7 +5580,7 @@ position = Vector2(-0.5, 1.5)
 shape = SubResource("RectangleShape2D_g7m3v")
 
 [node name="TestPlayer" parent="." instance=ExtResource("2_bxdtp")]
-position = Vector2(4794, -478)
+position = Vector2(4879, -500)
 collision_mask = 254
 
 [node name="Ladder" type="Area2D" parent="."]
